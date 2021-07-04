@@ -54,6 +54,9 @@ const clientInfoStyled = styled.section`
     /* or 131% */
 
     color: #585757;
+    /* &::content {
+      background-color: red;
+    } */
   }
   .leftLabel {
     border-radius: 24px 0px 0px 24px;
@@ -66,6 +69,14 @@ const clientInfoStyled = styled.section`
     }
   }
   .rightLabel {
+    border-radius: 0px 24px 24px 0px;
+
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+      0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+      0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+      0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+      0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+      0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
     border-radius: 0px 24px 24px 0px;
     ::before {
       display: block;
