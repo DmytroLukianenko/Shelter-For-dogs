@@ -1,7 +1,9 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useEffect, useState } from 'react'
 import { Form, Formik, withFormik, Field } from 'formik'
 import ClientInfoStyled from './shelterInfoStyled'
-import { connect } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
+import allShelters from '../../Redux/operations/operations'
+import selectors from '../../Redux/seletors/selectors'
 
 // const clientInfo = () => {
 //   return (
@@ -17,6 +19,18 @@ const initialState = {
 
 const ShelterInfo = () => {
   const [state, newState] = useState({ ...initialState })
+  const dispatch = useDispatch('')
+  const selectorList = useSelector(selectors.allShelters)
+
+  // selectorList.map(item => console.log(item.))
+  // console.log(selectorList)
+
+  // useEffect(() => {
+  //   dispatch(allShelters())
+  // }, [])
+  const tryList = selectorList.map(item => {
+    return <option value={item.name} label={item.name} id={item.id} />
+  })
 
   const onChangeRadioButton = e => {
     newState({ ...state, oneShelter: e.target.value })
@@ -40,9 +54,9 @@ const ShelterInfo = () => {
                     <input
                       type="radio"
                       id="radioOne"
-                      defaultChecked={values.myRadioGroup === 'one'}
+                      defaultChecked={values.oneShelter === 'one'}
                       onChange={onChangeRadioButton}
-                      name="myRadioGroup"
+                      name="oneShelter"
                       value="one"
                     />
                   </label>
@@ -53,17 +67,22 @@ const ShelterInfo = () => {
                     <input
                       type="radio"
                       id="radioTwo"
-                      defaultChecked={values.myRadioGroup === 'two'}
+                      defaultChecked={values.oneShelter === 'two'}
                       onChange={onChangeRadioButton}
-                      name="myRadioGroup"
+                      name="oneShelter"
                       value="two"
                     />
-                    Two
                   </label>
                 </li>
               </ul>
             </Field>
-            <button type="submit">Submit</button>
+            {/* <label htmlFor="email" style={{ display: 'block' }}>
+              Color
+            </label> */}
+            <select name="shelter" value={state.shelterName}>
+              {tryList}
+            </select>
+            <button type="submit">streliay</button>
           </Form>
         )}
       </Formik>

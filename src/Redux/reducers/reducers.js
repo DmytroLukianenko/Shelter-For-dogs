@@ -1,6 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
-import { clientInfoAction, shelterInfoAction } from '../actions/actions'
+import { clientInfoAction } from '../actions/actions'
+import shelterActions from '../actions/actions'
 
 const clientInfoinitialState = {
   firstName: '',
@@ -17,14 +18,19 @@ const clientReducer = createReducer(
 )
 const shelterInfoInitialState = {
   oneShelter: '',
-  shelterName: '',
+  shelters: [],
   amount: '',
 }
 
 const shelterInfoReducer = createReducer(
   { ...shelterInfoInitialState },
   {
-    [shelterInfoAction]: (state, { payload }) => ({ ...payload }),
+    [shelterActions.shelterInfoAction]: (_, { payload }) => ({ ...payload }),
+
+    [shelterActions.getAllSheltersSucces]: (state, { payload }) => ({
+      ...state,
+      ...payload.data,
+    }),
   }
 )
 export default combineReducers({
