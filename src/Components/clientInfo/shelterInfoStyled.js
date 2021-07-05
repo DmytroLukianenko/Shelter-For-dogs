@@ -37,6 +37,14 @@ const clientInfoStyled = styled.section`
     } */
   }
   label {
+    /* or 131% */
+
+    color: #585757;
+    /* &::content {
+      background-color: red;
+    } */
+  }
+  .leftLabel {
     display: block;
     min-width: 100%;
     min-height: 100%;
@@ -51,14 +59,6 @@ const clientInfoStyled = styled.section`
     font-weight: 600;
     font-size: 16px;
     line-height: 1.31;
-    /* or 131% */
-
-    color: #585757;
-    /* &::content {
-      background-color: red;
-    } */
-  }
-  .leftLabel {
     border-radius: 24px 0px 0px 24px;
     ::before {
       display: block;
@@ -68,7 +68,24 @@ const clientInfoStyled = styled.section`
       background-image: url(${walleticon});
     }
   }
+  #checkbox:checked {
+    background-color: red;
+  }
   .rightLabel {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    background: #faf9f9;
+    border: 1px solid #cd8b65;
+    box-sizing: border-box;
+
+    padding: 24px 25px 23px 25px;
+
+    font-family: Public Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.31;
     border-radius: 0px 24px 24px 0px;
 
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
@@ -86,9 +103,9 @@ const clientInfoStyled = styled.section`
       background-image: url(${pawicon});
     }
   }
-  input {
+  /* input {
     display: none;
-  }
+  } */
 `
 
 export default clientInfoStyled

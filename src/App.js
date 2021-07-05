@@ -19,7 +19,7 @@ function App() {
       <GlobalStyle />
       <ClientInfo />
       <HelpInfo />
-      {/* <ResultPage /> */}
+      <ResultPage />
 
       {/* <Footer /> */}
     </>

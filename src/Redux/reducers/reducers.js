@@ -18,6 +18,7 @@ const clientReducer = createReducer(
 )
 const shelterInfoInitialState = {
   oneShelter: '',
+  selectedShelter: '',
   shelters: [],
   amount: '',
 }
@@ -25,7 +26,13 @@ const shelterInfoInitialState = {
 const shelterInfoReducer = createReducer(
   { ...shelterInfoInitialState },
   {
-    [shelterActions.shelterInfoAction]: (_, { payload }) => ({ ...payload }),
+    [shelterActions.shelterInfoAction]: (_, { payload }) => ({
+      // ...payload,
+      amount: payload.checked.toString(),
+      oneShelter: payload.oneShelter,
+      selectedShelter: payload.selectedShelter,
+      shelters: payload.shelters,
+    }),
 
     [shelterActions.getAllSheltersSucces]: (state, { payload }) => ({
       ...state,

@@ -1,9 +1,10 @@
 import React, { Component, useEffect, useState } from 'react'
-import { Form, Formik, withFormik, Field } from 'formik'
+import { Form, Formik, withFormik, Field, setFieldValue } from 'formik'
 import ClientInfoStyled from './shelterInfoStyled'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import allShelters from '../../Redux/operations/operations'
 import selectors from '../../Redux/seletors/selectors'
+import shelterActions from '../../Redux/actions/actions'
 
 // const clientInfo = () => {
 //   return (
@@ -13,8 +14,10 @@ import selectors from '../../Redux/seletors/selectors'
 
 const initialState = {
   oneShelter: 'one',
-  shelterName: '',
+  selectedShelter: '',
+  shelters: [],
   amount: '',
+  checked: [],
 }
 
 const ShelterInfo = () => {
@@ -22,28 +25,31 @@ const ShelterInfo = () => {
   const dispatch = useDispatch('')
   const selectorList = useSelector(selectors.allShelters)
 
-  // selectorList.map(item => console.log(item.))
-  // console.log(selectorList)
-
-  // useEffect(() => {
-  //   dispatch(allShelters())
-  // }, [])
-  const tryList = selectorList.map(item => {
-    return <option value={item.name} label={item.name} id={item.id} />
+  const selectList = selectorList.map(item => {
+    return <option value={item.name} label={item.name} key={item.id} />
   })
 
   const onChangeRadioButton = e => {
     newState({ ...state, oneShelter: e.target.value })
-    // console.log(state)
   }
 
   return (
     <ClientInfoStyled>
       <Formik
         initialValues={{ ...initialState }}
-        onSubmit={state => console.log(state)}
+        onSubmit={values => {
+          // console.log(values)
+          dispatch(shelterActions.shelterInfoAction(values))
+        }}
       >
-        {({ values }) => (
+        {({
+          values,
+          handleChange,
+          handleBlur,
+          errors,
+          touched,
+          setFieldValue,
+        }) => (
           <Form className="container">
             <h2>Vyberte si možnosť, ako chcete pomôcť </h2>
             <Field component="div" name="myRadioGroup">
@@ -55,7 +61,7 @@ const ShelterInfo = () => {
                       type="radio"
                       id="radioOne"
                       defaultChecked={values.oneShelter === 'one'}
-                      onChange={onChangeRadioButton}
+                      onChange={values => console.log(values)}
                       name="oneShelter"
                       value="one"
                     />
@@ -67,10 +73,10 @@ const ShelterInfo = () => {
                     <input
                       type="radio"
                       id="radioTwo"
-                      defaultChecked={values.oneShelter === 'two'}
+                      defaultChecked={values.oneShelter === 'all'}
                       onChange={onChangeRadioButton}
                       name="oneShelter"
-                      value="two"
+                      value="all"
                     />
                   </label>
                 </li>
@@ -79,10 +85,125 @@ const ShelterInfo = () => {
             {/* <label htmlFor="email" style={{ display: 'block' }}>
               Color
             </label> */}
-            <select name="shelter" value={state.shelterName}>
-              {tryList}
+            <select
+              name="selectedShelter"
+              value={values.selectedShelter}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            >
+              <option value="" label="Choose a Shelter" />
+              {selectList}
             </select>
-            <button type="submit">streliay</button>
+            {errors.color && touched.color && (
+              <div className="input-feedback">{errors.color}</div>
+            )}
+            <div role="group" aria-labelledby="checkbox-group">
+              <label>
+                <Field
+                  type="checkbox"
+                  name="checked"
+                  value="5"
+                  onChange={value => {
+                    if (values.checked.length >= 0) {
+                      setFieldValue('checked', [value.target.value])
+                    }
+                  }}
+                />
+                5 €
+              </label>
+              <label>
+                <Field
+                  type="checkbox"
+                  name="checked"
+                  value="10"
+                  // onChange={handleChange}
+                  onChange={value => {
+                    if (values.checked.length >= 0) {
+                      setFieldValue('checked', [value.target.value])
+                    }
+                  }}
+                  // onBlur={handleBlur}
+                />
+                10 €
+              </label>
+              <label>
+                <Field
+                  type="checkbox"
+                  name="checked"
+                  value="20"
+                  // onChange={handleChange}
+                  onChange={value => {
+                    if (values.checked.length >= 0) {
+                      setFieldValue('checked', [value.target.value])
+                    }
+                  }}
+                />
+                20 €
+              </label>
+              <label>
+                <Field
+                  type="checkbox"
+                  name="checked"
+                  value="30"
+                  // onChange={handleChange}
+                  onChange={value => {
+                    if (values.checked.length >= 0) {
+                      setFieldValue('checked', [value.target.value])
+                    }
+                  }}
+                />
+                30 €
+              </label>
+              <label>
+                <Field
+                  type="checkbox"
+                  name="checked"
+                  value="50"
+                  onChange={value => {
+                    if (values.checked.length >= 0) {
+                      setFieldValue('checked', [value.target.value])
+                    }
+                  }}
+                  // onChange={handleChange}
+                  // onBlur={value => {
+                  //   if (values.checked.length > 0) {
+                  //     setFieldValue('checked', value.target.value)
+                  //   }
+                  // }}
+                />
+                50 €
+              </label>
+              <label>
+                <Field
+                  type="checkbox"
+                  name="checked"
+                  value="100"
+                  // onChange={handleChange}
+                  onChange={value => {
+                    if (values.checked.length >= 0) {
+                      setFieldValue('checked', [value.target.value])
+                    }
+                  }}
+                  // dirty={true}
+                  // disable={disable}
+                />
+                100 €
+              </label>
+              <Field
+                name="amount"
+                type="amount"
+                placeholder="______ €"
+                value={values.checked}
+                onChange={value => {
+                  if (values.checked.length >= 0) {
+                    setFieldValue('checked', [value.target.value])
+                  } else {
+                    setFieldValue('checked', [])
+                  }
+                }}
+              ></Field>
+            </div>
+            <button type="submit">trax </button>
           </Form>
         )}
       </Formik>

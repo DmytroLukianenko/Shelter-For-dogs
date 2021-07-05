@@ -12,6 +12,8 @@ const yupSchema = Yup.object().shape({
     .matches(/^([^0-9]*)$/, 'Last name should not contain numbers'),
   email: Yup.string().email('Email should have correct format'),
   // .required('Email is a required field'),
+  color: Yup.string().required('You should choose a shelter!'),
+  // .required('Email is a required field'),
 })
 
 export default yupSchema
