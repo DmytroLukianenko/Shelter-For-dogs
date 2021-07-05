@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import { Form, Formik, withFormik, Field, setFieldValue } from 'formik'
+import { Form, Formik, withFormik, Field } from 'formik'
 import ClientInfoStyled from './shelterInfoStyled'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import allShelters from '../../Redux/operations/operations'
@@ -60,10 +60,13 @@ const ShelterInfo = () => {
                     <input
                       type="radio"
                       id="radioOne"
-                      defaultChecked={values.oneShelter === 'one'}
+                      defaultChecked={
+                        values.oneShelter ===
+                        'Chcem finančne prispieť konkrétnemu útulku'
+                      }
                       onChange={values => console.log(values)}
                       name="oneShelter"
-                      value="one"
+                      value="Chcem finančne prispieť konkrétnemu útulku"
                     />
                   </label>
                 </li>
@@ -73,10 +76,13 @@ const ShelterInfo = () => {
                     <input
                       type="radio"
                       id="radioTwo"
-                      defaultChecked={values.oneShelter === 'all'}
+                      defaultChecked={
+                        values.oneShelter ===
+                        'Chcem finančne prispieť celej nadácii'
+                      }
                       onChange={onChangeRadioButton}
                       name="oneShelter"
-                      value="all"
+                      value="Chcem finančne prispieť celej nadácii"
                     />
                   </label>
                 </li>
