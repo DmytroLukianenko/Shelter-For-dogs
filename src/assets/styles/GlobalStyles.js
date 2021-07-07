@@ -24,7 +24,7 @@ body {
     margin-left: auto;
     font-family: 'Hind Siliguri', sans-serif;
 font-family: 'Public Sans', sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 img {
@@ -58,8 +58,9 @@ img {
 @media screen and (min-width: 1280px) {
     .container {
         width: 100%;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-bottom: 78px;
     }
 }
 

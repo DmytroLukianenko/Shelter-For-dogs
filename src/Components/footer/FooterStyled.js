@@ -10,9 +10,9 @@ const FooterStyled = styled.footer`
   &:before {
     position: absolute;
     display: block;
-    content: 'adsasdsad';
+    content: '';
     height: 2px;
-    width: 100%;
+    width: 85%;
     background-image: url(${separatot});
     transform: translateY(-75px);
   }
@@ -22,6 +22,7 @@ const FooterStyled = styled.footer`
     font-weight: 800;
     font-size: 16px;
     line-height: 1.3;
+    margin-bottom: 24px;
   }
   p,
   a {
@@ -40,6 +41,9 @@ const FooterStyled = styled.footer`
   }
   h3 {
     font-weight: 800;
+  }
+  .linkList {
+    line-height: 2;
   }
 `
 export default FooterStyled

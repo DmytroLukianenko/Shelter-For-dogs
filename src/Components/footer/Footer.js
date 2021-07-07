@@ -9,7 +9,7 @@ const footer = () => {
       </div>
       <div>
         <h3>Nadácia Good boy</h3>
-        <ul className="list">
+        <ul className="list linkList">
           <li>
             <a className="link" href="/">
               O projekte
