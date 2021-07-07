@@ -40,7 +40,7 @@ const clientInfoStyled = styled.section`
     line-height: 1.31;
 
     position: absolute;
-    top: 44.5%;
+    transform: translateY(-517%);
     padding-left: 30px;
   }
   li {

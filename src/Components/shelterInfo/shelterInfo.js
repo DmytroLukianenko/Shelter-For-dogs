@@ -80,7 +80,7 @@ const ShelterInfo = () => {
                   <label
                     htmlFor="radioOne"
                     className={
-                      values.oneShelter === '1'
+                      values.oneShelter === 'one'
                         ? 'leftLabel active'
                         : 'leftLabel'
                     }
@@ -91,7 +91,7 @@ const ShelterInfo = () => {
                       type="radio"
                       id="radioOne"
                       name="oneShelter"
-                      value="1"
+                      value="one"
                       defaultChecked={values.oneShelter === value}
                     />
                   </label>
@@ -100,7 +100,7 @@ const ShelterInfo = () => {
                   <label
                     htmlFor="radioTwo"
                     className={
-                      values.oneShelter === '2'
+                      values.oneShelter === 'all'
                         ? 'rightLabel active'
                         : 'rightLabel'
                     }
@@ -111,7 +111,7 @@ const ShelterInfo = () => {
                       type="radio"
                       id="radioTwo"
                       name="oneShelter"
-                      value="2"
+                      value="all"
                       defaultChecked={values.oneShelter === value}
                     />
                   </label>
