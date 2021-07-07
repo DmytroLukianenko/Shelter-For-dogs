@@ -13,6 +13,8 @@ import ReactPhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Wrapper from './clientInfoStyled'
 import { clientInfoAction } from '../../Redux/actions/actions'
+import { ButtonBack, ButtonNext } from '../button/Button'
+import Footer from '../footer/Footer'
 import phoneInput from '../inputField/inputField'
 import yupSchema from './yupSchema'
 import ResultPage from '../resultPage/resultPage'
@@ -53,7 +55,7 @@ function ClientInfoForm() {
       >
         {({ values, handleChange, setFieldValue }) => (
           <Form>
-            <h3>Potrebujeme od Vás zopár informácií</h3>
+            <h2>Potrebujeme od Vás zopár informácií</h2>
             <p>O vás</p>
 
             <label htmlFor="firstName">Meno</label>
@@ -62,7 +64,6 @@ function ClientInfoForm() {
               type="text"
               placeholder="Zadajte Vaše meno"
               value={values.firstName}
-              // onChange={onChange}
               onChange={handleChange}
             />
             <ErrorMessage name="firstName" />
@@ -88,28 +89,34 @@ function ClientInfoForm() {
               onChange={handleChange}
             />
             <ErrorMessage name="email" />
-
+            <label for="phone">Telefónne číslo</label>
             <ReactPhoneInput
               country={'sk'}
               onlyCountries={['cz', 'sk']}
               name="phone"
               type="phone"
               value={values.phone}
+              inputProps={{
+                name: 'phone',
+                country: 'sk',
+                required: true,
+                autoFocus: true,
+              }}
               onChange={e => setFieldValue('phone', e)}
-              // onChange={this.onPhoneChange}
+              containerStyle={{}}
+              inputStyle={{
+                border: 'none',
+              }}
+              required
             />
-
             <div className="buttonContainer">
-              <button type="submit" className="buttonBack">
-                Späť{' '}
-              </button>
-              <button type="submit" className="buttonSend">
-                Pokračovať{' '}
-              </button>
+              <ButtonBack text="Späť" type="button"></ButtonBack>
+              <ButtonNext text="Pokračovať" type="submit"></ButtonNext>
             </div>
           </Form>
         )}
       </Formik>
+      <Footer />
     </Wrapper>
   )
 }

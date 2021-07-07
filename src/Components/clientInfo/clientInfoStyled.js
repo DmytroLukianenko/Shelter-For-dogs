@@ -21,6 +21,7 @@ const Wrapper = styled.div`
     font-weight: 800;
     font-size: 16px;
     line-height: 21px;
+    z-index: 1;
   }
   input {
     width: 100%;
@@ -34,9 +35,33 @@ const Wrapper = styled.div`
 
     margin-bottom: 16px;
 
-    padding: 16px 25px;
+    padding: 37px 24px 16px 24px;
   }
-  h3 {
+  .react-tel-input {
+    border: 1px solid #cd8b65;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 557px;
+    height: 74px;
+    padding: 16px 25px;
+
+    background: white;
+  }
+  .flag-dropdown {
+    background: inherit;
+    border: none;
+    background: transparent;
+
+    /* transform: translateY(15%); */
+  }
+  .selected-flag {
+    transform: translateY(10%);
+    background: transparent;
+  }
+  .form-control {
+    transform: translateY(-15%);
+  }
+  h2 {
     font-family: Hind;
     font-style: normal;
     font-weight: bold;
@@ -44,6 +69,7 @@ const Wrapper = styled.div`
     line-height: 1.13;
 
     letter-spacing: 0.01em;
+    margin-bottom: 42px;
   }
   p {
     font-family: Public Sans;
@@ -51,10 +77,13 @@ const Wrapper = styled.div`
     font-weight: 800;
     font-size: 14px;
     line-height: 1.36;
+
+    margin-bottom: 13px;
   }
   .buttonContainer {
     display: flex;
     justify-content: space-between;
+    margin-top: 68px;
   }
   .buttonBack {
     padding: 20px 24px;

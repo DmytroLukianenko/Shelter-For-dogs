@@ -171,6 +171,19 @@ const clientInfoStyled = styled.section`
 
     padding: 16px 25px;
   }
+  .selectLabel {
+    position: absolute;
+    padding-left: 30px;
+    transform: translateY(25px);
+    font-family: Public Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.31;
+    /* identical to box height, or 131% */
+
+    color: #2f2f2f;
+  }
   .checkboxContainer {
     margin-top: 15px;
     display: flex;

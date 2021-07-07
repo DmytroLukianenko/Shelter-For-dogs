@@ -122,6 +122,7 @@ const ShelterInfo = () => {
               <h3>O projekte</h3>
               <h4>Nepovinné</h4>
             </div>
+            <label for="selectedShelter" className='selectLabel'>Utulok</label>
             <select
               name="selectedShelter"
               value={values.selectedShelter}
@@ -135,7 +136,7 @@ const ShelterInfo = () => {
               />
               {selectList}
             </select>
-            <p>Utulok</p>
+            {/* <p>Utulok</p> */}
             {errors.color && touched.color && (
               <div className="input-feedback">{errors.color}</div>
             )}
