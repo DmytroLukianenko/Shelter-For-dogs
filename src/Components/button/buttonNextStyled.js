@@ -8,7 +8,7 @@ const buttonNextStyled = styled.button`
   position: absolute;
   width: 124px;
   height: 59px;
-  left: 40%;
+  transform: translateX(340%);
 
   color: white;
   background: linear-gradient(115.41deg, #cd8a64 -1.77%, #c4794f 73.03%);

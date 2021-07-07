@@ -189,7 +189,7 @@ const clientInfoStyled = styled.section`
     border-radius: 8px;
     order: 0;
     flex-grow: 0;
-    margin-right: 20px;
+    margin-right: 6px;
 
     font-family: Public Sans;
     font-style: normal;
@@ -203,15 +203,20 @@ const clientInfoStyled = styled.section`
     display: none;
   }
   .amountInput {
+    text-align: center;
+
     width: 86px;
     height: 53px;
+
+    padding: 16px;
 
     background: #ffffff;
     border: 1px solid #dfdfdf;
     box-sizing: border-box;
     border-radius: 8px;
-    &::placeholder {
-    }
+  }
+  button {
+    margin-top: 70px;
   }
 `
 

@@ -56,8 +56,8 @@ const ShelterInfo = () => {
         // console.log(value)
         onSubmit={values => {
           console.log(values)
-          // dispatch(shelterActions.shelterInfoAction(values))
-          // history.push('/clientInfo')
+          dispatch(shelterActions.shelterInfoAction(values))
+          history.push('/clientInfo')
         }}
       >
         {({
@@ -87,6 +87,7 @@ const ShelterInfo = () => {
                   >
                     Chcem finančne prispieť konkrétnemu útulku
                     <input
+                      className="hideCheck"
                       type="radio"
                       id="radioOne"
                       name="oneShelter"
@@ -106,6 +107,7 @@ const ShelterInfo = () => {
                   >
                     Chcem finančne prispieť celej nadácii
                     <input
+                      className="hideCheck"
                       type="radio"
                       id="radioTwo"
                       name="oneShelter"
@@ -231,11 +233,12 @@ const ShelterInfo = () => {
                 className="amountInput"
                 name="input"
                 type="amount"
-                placeholder="______ €"
-                value={values.checked}
+                placeholder="€"
+                value={values.amount}
                 onChange={value => {
                   if (values.checked.length >= 0) {
                     setFieldValue('checked', [value.target.value])
+                    setFieldValue('amount', value.target.value)
                   } else {
                     setFieldValue('checked', [])
                   }
@@ -243,7 +246,9 @@ const ShelterInfo = () => {
               ></Field>
             </div>
             {/* <button type="submit">Pokračovať </button> */}
-            <ButtonNext text="Pokračovať"> </ButtonNext>
+            <ButtonNext type="submit" text="Pokračovať">
+              {' '}
+            </ButtonNext>
           </Form>
         )}
       </Formik>
