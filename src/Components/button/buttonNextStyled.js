@@ -20,6 +20,9 @@ const buttonNextStyled = styled.button`
     0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
   border-radius: 100px;
   border: 0;
+  &:hover {
+    background: red;
+  }
 `
 
 export default buttonNextStyled

@@ -145,13 +145,20 @@ const ShelterInfo = () => {
               role="group"
               aria-labelledby="checkbox-group"
             >
-              <label className="checkboxLabel">
+              <label
+                className={
+                  values.checked.toString() === '5'
+                    ? 'checkboxLabel checkboxActive'
+                    : 'checkboxLabel'
+                }
+              >
                 <Field
                   className="hideCheck"
                   type="checkbox"
                   name="checked"
                   value="5"
                   onChange={value => {
+                    console.log(value.target.checked)
                     if (values.checked.length >= 0) {
                       setFieldValue('checked', [value.target.value])
                     }
@@ -159,7 +166,13 @@ const ShelterInfo = () => {
                 />
                 5 €
               </label>
-              <label className="checkboxLabel">
+              <label
+                className={
+                  values.checked.toString() === '10'
+                    ? 'checkboxLabel checkboxActive'
+                    : 'checkboxLabel'
+                }
+              >
                 <Field
                   className="hideCheck"
                   type="checkbox"
@@ -173,7 +186,13 @@ const ShelterInfo = () => {
                 />
                 10 €
               </label>
-              <label className="checkboxLabel">
+              <label
+                className={
+                  values.checked.toString() === '20'
+                    ? 'checkboxLabel checkboxActive'
+                    : 'checkboxLabel'
+                }
+              >
                 <Field
                   className="hideCheck"
                   type="checkbox"
@@ -187,7 +206,13 @@ const ShelterInfo = () => {
                 />
                 20 €
               </label>
-              <label className="checkboxLabel">
+              <label
+                className={
+                  values.checked.toString() === '30'
+                    ? 'checkboxLabel checkboxActive'
+                    : 'checkboxLabel'
+                }
+              >
                 <Field
                   className="hideCheck"
                   type="checkbox"
@@ -201,7 +226,13 @@ const ShelterInfo = () => {
                 />
                 30 €
               </label>
-              <label className="checkboxLabel">
+              <label
+                className={
+                  values.checked.toString() === '50'
+                    ? 'checkboxLabel checkboxActive'
+                    : 'checkboxLabel'
+                }
+              >
                 <Field
                   className="hideCheck"
                   type="checkbox"
@@ -215,7 +246,13 @@ const ShelterInfo = () => {
                 />
                 50 €
               </label>
-              <label className="checkboxLabel">
+              <label
+                className={
+                  values.checked.toString() === '100'
+                    ? 'checkboxLabel checkboxActive'
+                    : 'checkboxLabel'
+                }
+              >
                 <Field
                   className="hideCheck"
                   type="checkbox"

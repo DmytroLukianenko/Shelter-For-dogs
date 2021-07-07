@@ -217,6 +217,25 @@ const clientInfoStyled = styled.section`
   }
   button {
     margin-top: 70px;
+    &:focus {
+      background-color: red;
+      outline: none;
+      box-shadow: 0px 0px 2px red;
+    }
+  }
+  option {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: hidden;
+    width: 100%;
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 2px red;
+    }
+  }
+  .checkboxActive {
+    background: linear-gradient(115.41deg, #cd8a64 -1.77%, #c4794f 73.03%);
+    border-radius: 8px;
   }
 `
 
