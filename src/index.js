@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import 'normalize.css'
+import '../node_modules/modern-normalize/modern-normalize.css'
 import '../src/assets/styles/index.css'
 import store, { persistor } from './Redux/store'
 import { Provider } from 'react-redux'
