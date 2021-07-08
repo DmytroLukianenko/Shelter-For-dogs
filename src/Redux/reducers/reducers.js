@@ -2,6 +2,7 @@ import { createReducer } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 import { clientInfoAction } from '../actions/actions'
 import shelterActions from '../actions/actions'
+import { number } from 'yup'
 
 const clientInfoinitialState = {
   firstName: '',
@@ -10,37 +11,43 @@ const clientInfoinitialState = {
   phone: '',
 }
 
-const clientReducer = createReducer(
-  { ...clientInfoinitialState },
-  {
-    [clientInfoAction]: (state, { payload }) => ({ ...payload }),
-  }
-)
+// const clientReducer = createReducer({ ...clientInfoinitialState })
 const shelterInfoInitialState = {
   oneShelter: '',
   selectedShelter: '',
+  shelterId: '',
   shelters: [],
   amount: '',
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
 }
 
 const shelterInfoReducer = createReducer(
   { ...shelterInfoInitialState },
+
   {
-    [shelterActions.shelterInfoAction]: (_, { payload }) => ({
-      // ...payload,
+    [clientInfoAction]: (state, { payload }) => ({ ...state, ...payload }),
+
+    [shelterActions.shelterInfoAction]: (state, { payload }) => ({
       amount: payload.checked.toString(),
       oneShelter: payload.oneShelter,
       selectedShelter: payload.selectedShelter,
-      shelters: payload.shelters,
+      shelters: [...state.shelters],
     }),
 
     [shelterActions.getAllSheltersSucces]: (state, { payload }) => ({
       ...state,
-      ...payload.data,
+      shelters: payload.data.shelters,
+    }),
+
+    [shelterActions.postInfoSucces]: (state, { payload }) => ({
+      ...state,
+      ...payload,
     }),
   }
 )
 export default combineReducers({
   shelterInfoReducer,
-  clientReducer,
 })

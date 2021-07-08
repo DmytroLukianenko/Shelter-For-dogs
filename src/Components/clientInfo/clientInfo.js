@@ -34,18 +34,7 @@ function ClientInfoForm() {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  const onSubmit = state => {
-    dispatch(clientInfoAction(state))
-    console.log(state)
-  }
-
-  // const onChange = e => {
-  //   newState({
-  //     ...state,
-  //     [e.target.name]: e.target.value,
-  //   })
-  //   console.log(state)
-  // }
+  const GoBack = () => history.goBack()
 
   return (
     <>
@@ -115,8 +104,17 @@ function ClientInfoForm() {
                 required
               />
               <div className="buttonContainer">
-                <ButtonBack text="Späť" type="button"></ButtonBack>
-                <ButtonNext text="Pokračovať" type="submit"></ButtonNext>
+                <ButtonBack
+                  text="Späť"
+                  type="button"
+                  onClick={GoBack}
+                  alt="button back"
+                ></ButtonBack>
+                <ButtonNext
+                  text="Pokračovať"
+                  type="submit"
+                  alt="button next"
+                ></ButtonNext>
               </div>
             </Form>
           )}

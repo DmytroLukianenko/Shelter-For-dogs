@@ -1,4 +1,4 @@
-import { connect, useSelector } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import { object } from 'yup'
 import selectors from '../../Redux/seletors/selectors'
 import store from '../../Redux/store'
@@ -8,20 +8,31 @@ import * as Yup from 'yup'
 import { ButtonBack, ButtonNext } from '../button/Button'
 import Footer from '../footer/Footer'
 import Background from '../backGround/backGround'
+import { useHistory } from 'react-router-dom'
 import on from '../../assets/img/on.svg'
 import off from '../../assets/img/off.svg'
+import shelterActions from '../../Redux/actions/actions'
+import { postInfoOperation } from '../../Redux/operations/operations'
 
 const ResultPage = () => {
   const firstName = useSelector(selectors.firstName)
   const lastName = useSelector(selectors.lastName)
   const phone = useSelector(selectors.phone)
   const email = useSelector(selectors.email)
-
-  const shelterObject = useSelector(state => state.clientReducer)
+  console.log(firstName)
+  // const shelterObject = useSelector(state => state.clientReducer)
   const error = 'Pole nebolo vyplnené'
   const amount = useSelector(selectors.amount)
   const selectedShelter = useSelector(selectors.selectedShelter)
   const oneShelter = useSelector(selectors.oneShelter)
+  const dispatch = useDispatch('')
+  const history = useHistory()
+
+  const GoBack = () => history.goBack()
+
+  const handleClick = () => {
+    dispatch(postInfoOperation(firstName, lastName, phone, amount, email))
+  }
 
   // const resultList = () => {
   //   for (const item in shelterObject) {
@@ -67,20 +78,26 @@ const ResultPage = () => {
           </li>
         </ul>
         <Formik
-          initialValues={{
-            acceptTerms: false,
-          }}
-          validationSchema={Yup.object().shape({
-            acceptTerms: Yup.bool().oneOf(
-              [true],
-              'Spracúvanie osobných údajov je povinné'
-            ),
-          })}
-          onSubmit={fields => {
-            alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4))
-          }}
+          initialValues={
+            {
+              // acceptTerms: false,
+            }
+          }
+          // validationSchema={Yup.object().shape({
+          //   acceptTerms: Yup.bool().oneOf(
+          //     [true],
+          //     'Spracúvanie osobných údajov je povinné'
+          //   ),
+          // })}
+          // onSubmit={e => {
+          //   console.log(e)
+
+          //   // dispatch(
+          //   //   postInfoOperation(firstName, lastName, phone, value, email)
+          //   // )
+          // }}
         >
-          {({ errors, status, touched, values }) => (
+          {({ errors, touched, values }) => (
             <Form>
               <div className="form-group form-check">
                 <Field
@@ -110,17 +127,18 @@ const ResultPage = () => {
                 />
               </div>
               <div className="buttonContainer">
-                <ButtonBack text="Späť" type="button"></ButtonBack>
-                <ButtonNext text="Odoslať formulár" type="submit"></ButtonNext>
+                <ButtonBack
+                  text="Späť"
+                  type="button"
+                  onClick={GoBack}
+                  alt="button back"
+                ></ButtonBack>
+                <ButtonNext
+                  text="Odoslať formulár"
+                  type="submit"
+                  onClick={handleClick}
+                ></ButtonNext>
               </div>
-              {/* <div className="form-group">
-              <button type="submit" className="btn btn-primary mr-2">
-                Odoslať formulár
-              </button>
-              <button type="reset" className="btn btn-secondary">
-                Späť
-              </button>
-            </div> */}
             </Form>
           )}
         </Formik>

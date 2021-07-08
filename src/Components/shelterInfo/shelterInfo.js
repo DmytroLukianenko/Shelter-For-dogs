@@ -39,11 +39,13 @@ const ShelterInfo = () => {
   }
 
   useEffect(() => {
-    dispatch(allShelters())
+    dispatch(allShelters)
   }, [])
 
   const selectList = selectorList.map(item => {
-    return <option value={item.name} label={item.name} key={item.id} />
+    return (
+      <option value={item.name} label={item.name} id={item.id} key={item.id} />
+    )
   })
 
   const onChangeRadioButton = e => {
@@ -58,7 +60,8 @@ const ShelterInfo = () => {
           initialValues={{ ...initialState }}
           // console.log(value)
           onSubmit={values => {
-            console.log(values)
+            // const needShelter = values.shelters.find(values.oneShelter)
+            // console.log(values.shelters)
             dispatch(shelterActions.shelterInfoAction(values))
             history.push('/clientInfo')
           }}
@@ -129,13 +132,12 @@ const ShelterInfo = () => {
                 <h3>O projekte</h3>
                 <h4>Nepovinné</h4>
               </div>
-              <label for="selectedShelter" className="selectLabel">
-                Utulok
-              </label>
+              <label className="selectLabel">Utulok</label>
               <select
                 name="selectedShelter"
                 value={values.selectedShelter}
                 onChange={handleChange}
+                // onChange={ata}
                 onBlur={handleBlur}
               >
                 <option
