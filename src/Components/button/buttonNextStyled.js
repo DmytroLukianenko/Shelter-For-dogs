@@ -32,8 +32,9 @@ const buttonNextStyled = styled.button`
     border-radius: 100px;
   }
   &:hover {
-    /* background: red; */
-    /* transition: color 1s cubic-bezier(0.4, 0, 0.2, 1); */
+    background: black;
+    /* transform: scale(2, 2); */
+    /* transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
   }
 `
 

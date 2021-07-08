@@ -3,7 +3,7 @@ import Logo from '../logo/Logo'
 
 const footer = () => {
   return (
-    <FooterStyled>
+    <FooterStyled className="container">
       <div>
         <Logo />
       </div>

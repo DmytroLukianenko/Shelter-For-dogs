@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import dogImg from '../../assets/img/dog-image.png'
 const Wrapper = styled.div`
+  padding-bottom: 169px;
   .backGround {
     z-index: -1;
     width: 492px;
@@ -48,7 +49,6 @@ const Wrapper = styled.div`
     background: white;
   }
   .flag-dropdown {
-    background: inherit;
     border: none;
     background: transparent;
 

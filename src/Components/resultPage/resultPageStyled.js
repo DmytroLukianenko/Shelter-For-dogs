@@ -1,5 +1,8 @@
 import styled from 'styled-components'
+import on from '../../assets/img/on.svg'
+import off from '../../assets/img/off.svg'
 const ResultPageStyled = styled.section`
+  /* padding-bottom: 100px; */
   h3 {
     /* max-width: 70% */
     font-family: Hind;
@@ -12,6 +15,8 @@ const ResultPageStyled = styled.section`
     letter-spacing: 0.01em;
 
     margin-bottom: 42px;
+
+    /* padding-bottom: 70px; */
   }
   h4 {
     font-family: Public Sans;
@@ -33,6 +38,9 @@ const ResultPageStyled = styled.section`
 
     color: var(--main-text);
   }
+  ul {
+    margin-bottom: 52px;
+  }
   li {
     margin-bottom: 20px;
   }
@@ -42,9 +50,65 @@ const ResultPageStyled = styled.section`
     font-weight: normal;
     font-size: 16px;
     line-height: 1.31;
-    /* identical to box height, or 131% */
+
+    padding-left: 30px;
+
+    color: #2f2f2f;
+    opacity: 0.8;
 
     color: var(--main-text);
+    /* &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 34px;
+      height: 34px;
+      background-image: url(${props => (props.test ? off : on)});
+    } */
+  }
+  .labelOn::before {
+    position: absolute;
+    display: block;
+    /* top: 80%; */
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-image: url(${on});
+
+    transform: translate(-5px, -28px);
+    z-index: -1;
+  }
+  .labelOff::before {
+    position: absolute;
+    display: block;
+    /* top: 80%; */
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-image: url(${off});
+
+    transform: translate(-5px, -28px);
+    z-index: -1;
+  }
+
+  input {
+    vertical-align: middle;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    border: solid 5px red;
+  }
+  .invalid-feedback {
+    color: red;
+
+    transform: translate(43px, 7px);
+  }
+  button {
+    width: auto;
+  }
+  .buttonContainer {
+    margin-top: 75px;
   }
 `
+
 export default ResultPageStyled

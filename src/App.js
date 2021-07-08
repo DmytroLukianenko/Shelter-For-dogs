@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <BackGround />
+      {/* <BackGround /> */}
       <Router>
         <Switch>
           <Route exact path="/" component={ShelterInfo} />

@@ -4,6 +4,7 @@ import walleticon from '../../assets/img/walleticon.svg'
 
 const clientInfoStyled = styled.section`
   display: flex;
+  padding-bottom: 260px;
   h2 {
     width: 50%;
     font-family: Hind;
@@ -26,9 +27,7 @@ const clientInfoStyled = styled.section`
   h4 {
   }
   ul {
-    /* width: 200px;
-    height: 200px;
-    background-color: salmon; */
+    padding: 0;
     height: 186px;
     width: 557px;
   }
@@ -187,6 +186,7 @@ const clientInfoStyled = styled.section`
   .checkboxContainer {
     margin-top: 15px;
     display: flex;
+    /* margin-bottom: 70px; */
   }
   .checkboxLabel {
     display: flex;

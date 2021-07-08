@@ -4,8 +4,8 @@ import dogImg from '../../assets/img/dog-image.png'
 const backGroundStyled = styled.div`
   background-repeat: no-repeat;
   z-index: -1;
-  /* width: 100%; */
-  height: 50%;
+  width: 50%;
+  height: 100%;
   position: absolute;
   left: 50%;
   background-image: url(${dogImg});
