@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/Shelter-For-dogs/static/js/main.6c28b0df.chunk.js",
+    "main.js.map": "/Shelter-For-dogs/static/js/main.6c28b0df.chunk.js.map",
+    "runtime-main.js": "/Shelter-For-dogs/static/js/runtime-main.abe49a1e.js",
+    "runtime-main.js.map": "/Shelter-For-dogs/static/js/runtime-main.abe49a1e.js.map",
+    "static/css/2.a082927c.chunk.css": "/Shelter-For-dogs/static/css/2.a082927c.chunk.css",
+    "static/js/2.39c31954.chunk.js": "/Shelter-For-dogs/static/js/2.39c31954.chunk.js",
+    "static/js/2.39c31954.chunk.js.map": "/Shelter-For-dogs/static/js/2.39c31954.chunk.js.map",
+    "index.html": "/Shelter-For-dogs/index.html",
+    "static/css/2.a082927c.chunk.css.map": "/Shelter-For-dogs/static/css/2.a082927c.chunk.css.map",
+    "static/js/2.39c31954.chunk.js.LICENSE.txt": "/Shelter-For-dogs/static/js/2.39c31954.chunk.js.LICENSE.txt",
+    "static/media/dog-image.d9eca80d.png": "/Shelter-For-dogs/static/media/dog-image.d9eca80d.png",
+    "static/media/firstpage.09b20b8e.svg": "/Shelter-For-dogs/static/media/firstpage.09b20b8e.svg",
+    "static/media/logo.d4372a00.svg": "/Shelter-For-dogs/static/media/logo.d4372a00.svg",
+    "static/media/off.58891098.svg": "/Shelter-For-dogs/static/media/off.58891098.svg",
+    "static/media/on.597eae8c.svg": "/Shelter-For-dogs/static/media/on.597eae8c.svg",
+    "static/media/pawicon.1ebe5d47.svg": "/Shelter-For-dogs/static/media/pawicon.1ebe5d47.svg",
+    "static/media/secondpage.e2bcc6a1.svg": "/Shelter-For-dogs/static/media/secondpage.e2bcc6a1.svg",
+    "static/media/separator.d5b0c6fe.svg": "/Shelter-For-dogs/static/media/separator.d5b0c6fe.svg",
+    "static/media/thirdpage.43db88c7.svg": "/Shelter-For-dogs/static/media/thirdpage.43db88c7.svg",
+    "static/media/walleticon.56f73f81.svg": "/Shelter-For-dogs/static/media/walleticon.56f73f81.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.abe49a1e.js",
+    "static/css/2.a082927c.chunk.css",
+    "static/js/2.39c31954.chunk.js",
+    "static/js/main.6c28b0df.chunk.js"
+  ]
+}
