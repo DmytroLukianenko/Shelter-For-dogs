@@ -57,16 +57,10 @@ const ResultPageStyled = styled.section`
     opacity: 0.8;
 
     color: var(--main-text);
-    /* &:before {
-      position: absolute;
-      display: block;
-      content: '';
-      width: 34px;
-      height: 34px;
-      background-image: url(${props => (props.test ? off : on)});
-    } */
   }
   .labelOn::before {
+    top: -8px;
+    left: -20px;
     position: absolute;
     display: block;
     /* top: 80%; */
@@ -75,10 +69,12 @@ const ResultPageStyled = styled.section`
     height: 40px;
     background-image: url(${on});
 
-    transform: translate(-5px, -28px);
-    z-index: -1;
+    /* transform: translate(-5px, -28px); */
+    z-index: -10;
   }
   .labelOff::before {
+    top: -8px;
+    left: -20px;
     position: absolute;
     display: block;
     /* top: 80%; */
@@ -87,16 +83,20 @@ const ResultPageStyled = styled.section`
     height: 40px;
     background-image: url(${off});
 
-    transform: translate(-5px, -28px);
-    z-index: -1;
+    /* transform: translate(-5px, -28px); */
+    z-index: -10;
   }
 
   input {
+    position: absolute;
     vertical-align: middle;
     opacity: 0;
     width: 40px;
     height: 40px;
     border: solid 5px red;
+    transform: translate(-20px, -5px);
+
+    z-index: 200;
   }
   .invalid-feedback {
     color: red;
@@ -108,6 +108,9 @@ const ResultPageStyled = styled.section`
   }
   .buttonContainer {
     margin-top: 75px;
+  }
+  .form-group {
+    position: relative;
   }
 `
 

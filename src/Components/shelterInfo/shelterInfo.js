@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import { Form, Formik, withFormik, Field, ErrorMessage } from 'formik'
+import { Form, Formik, withFormik, Field, ErrorMessage, Button } from 'formik'
 import ClientInfoStyled from './shelterInfoStyled'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import allShelters from '../../Redux/operations/operations'
@@ -61,6 +61,8 @@ const ShelterInfo = () => {
             errors,
             touched,
             setFieldValue,
+            isValid,
+            dirty,
           }) => (
             <Form>
               <h2>Vyberte si možnosť, ako chcete pomôcť </h2>
@@ -144,7 +146,8 @@ const ShelterInfo = () => {
               <div
                 className="checkboxContainer"
                 role="group"
-                aria-labelledby="checkbox-group"
+                label="checkboxGroup"
+                name="checkboxGroup"
               >
                 <label
                   className={
@@ -164,7 +167,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    required={values.checked.length > 0 ? false : true}
+                    // required={!values.checked && touched ? false : true}
                   />
                   5 €
                 </label>
@@ -185,7 +188,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    required={values.checked.length > 0 ? false : true}
+                    // required={values.checked.length > 0 ? false : true}
                   />
                   10 €
                 </label>
@@ -206,7 +209,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    required={values.checked.length > 0 ? false : true}
+                    // required={values.checked.length > 0 ? false : true}
                   />
                   20 €
                 </label>
@@ -227,7 +230,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    required={values.checked.length > 0 ? false : true}
+                    // required={values.checked.length > 0 ? false : true}
                   />
                   30 €
                 </label>
@@ -248,7 +251,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    required={values.checked.length > 0 ? false : true}
+                    // required={values.checked.length > 0 ? false : true}
                   />
                   50 €
                 </label>
@@ -269,7 +272,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    required={values.checked.length > 0 ? false : true}
+                    // required={values.checked.length > 0 ? false : true}
                   />
                   100 €
                 </label>
@@ -291,11 +294,18 @@ const ShelterInfo = () => {
               </div>
               <div className="error">
                 {errors.checked ? errors.checked : null}
-                <ErrorMessage name="checked" />
+                <ErrorMessage name="checkboxGroup" />
               </div>
-              <ButtonNext type="submit" text="Pokračovať">
-                {' '}
-              </ButtonNext>
+              <ButtonNext
+                type="submit"
+                text="Pokračovať"
+                disabled={!(isValid && dirty)}
+                // disabled={
+                //   !isValid ||
+                //   (Object.keys(touched).length === 0 &&
+                //     touched.constructor === Object)
+                // }
+              ></ButtonNext>
             </Form>
           )}
         </Formik>

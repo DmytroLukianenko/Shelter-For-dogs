@@ -49,8 +49,6 @@ const clientInfoStyled = styled.section`
   }
 
   label {
-    /* or 131% */
-    /* background: red; */
     color: #585757;
     &:checked {
       background: red;
@@ -58,14 +56,6 @@ const clientInfoStyled = styled.section`
     &:focus {
       background: red;
     }
-
-    /* &::content {
-      background-color: red;
-    } */
-    /* &:focus,
-    &: {
-      background-color: red;
-    } */
   }
   .leftLabel {
     display: block;
@@ -83,6 +73,8 @@ const clientInfoStyled = styled.section`
     font-size: 16px;
     line-height: 1.31;
     border-radius: 24px 0px 0px 24px;
+    color: #585757;
+    /* color: white; */
     ::before {
       display: block;
       content: '';
@@ -130,6 +122,8 @@ const clientInfoStyled = styled.section`
   }
 
   .active {
+    color: white;
+    fill: white;
     background: linear-gradient(180deg, #cd8b65 0%, #bb6b3d 100%);
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
       0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
@@ -149,7 +143,7 @@ const clientInfoStyled = styled.section`
   }
   .titleContainer {
     display: flex;
-    width: 50%;
+    width: 70%;
     justify-content: space-between;
 
     margin-top: 56px;
@@ -168,7 +162,7 @@ const clientInfoStyled = styled.section`
     margin-top: 15px;
     margin-bottom: 40px;
 
-    padding: 16px 25px;
+    padding: 25px 25px 16px;
   }
   .selectLabel {
     position: absolute;
@@ -230,10 +224,24 @@ const clientInfoStyled = styled.section`
   }
   button {
     margin-top: 70px;
-    &:focus {
+    &:disabled {
+      color: -internal-light-dark(
+        rgba(16, 16, 16, 0.3),
+        rgba(255, 255, 255, 0.3)
+      ) !important;
+      background-color: -internal-light-dark(
+        rgba(239, 239, 239, 0.3),
+        rgba(19, 1, 1, 0.3)
+      ) !important;
+      border-color: -internal-light-dark(
+        rgba(118, 118, 118, 0.3),
+        rgba(195, 195, 195, 0.3)
+      ) !important;
+      /* &:focus {
       background-color: red;
       outline: none;
       box-shadow: 0px 0px 2px red;
+    } */
     }
   }
   option {
@@ -247,6 +255,7 @@ const clientInfoStyled = styled.section`
     }
   }
   .checkboxActive {
+    color: white;
     background: linear-gradient(115.41deg, #cd8a64 -1.77%, #c4794f 73.03%);
     border-radius: 8px;
   }

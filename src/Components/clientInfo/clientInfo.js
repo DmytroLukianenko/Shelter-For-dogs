@@ -126,10 +126,11 @@ function ClientInfoForm() {
                   alt="button back"
                 ></ButtonBack>
                 <ButtonNext
+                  className="button"
                   text="Pokračovať"
                   type="submit"
                   alt="button next"
-                  disabled={!(values.isValid && values.dirty)}
+                  disabled={values.isValid && values.dirty}
                   onChange={handleChange}
                 ></ButtonNext>
               </div>

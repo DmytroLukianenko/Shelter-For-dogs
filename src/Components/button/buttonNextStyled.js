@@ -6,6 +6,7 @@ const buttonNextStyled = styled.button`
   padding: 20px 24px;
 
   position: absolute;
+  transition: all 0.5s ease;
   width: 124px;
   height: 59px;
   transform: translateX(340%);
@@ -20,9 +21,18 @@ const buttonNextStyled = styled.button`
     0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
   border-radius: 100px;
   border: 0;
-  &:focus {
-    background: #9f9f9f;
+  color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+  background-color: -internal-light-dark(
+    rgba(239, 239, 239, 0.3),
+    rgba(19, 1, 1, 0.3)
+  );
+  border-color: -internal-light-dark(
+    rgba(118, 118, 118, 0.3),
+    rgba(195, 195, 195, 0.3)
+  );
 
+  &:hover {
+    color: black;
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
       0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
       0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
@@ -30,11 +40,6 @@ const buttonNextStyled = styled.button`
       0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
       0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
     border-radius: 100px;
-  }
-  &:hover {
-    background: black;
-    /* transform: scale(2, 2); */
-    /* transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1); */
   }
 `
 

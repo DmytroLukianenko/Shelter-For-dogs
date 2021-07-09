@@ -78,17 +78,15 @@ const ResultPage = () => {
           </li>
         </ul>
         <Formik
-          initialValues={
-            {
-              // acceptTerms: false,
-            }
-          }
-          // validationSchema={Yup.object().shape({
-          //   acceptTerms: Yup.bool().oneOf(
-          //     [true],
-          //     'Spracúvanie osobných údajov je povinné'
-          //   ),
-          // })}
+          initialValues={{
+            acceptTerms: false,
+          }}
+          validationSchema={Yup.object().shape({
+            acceptTerms: Yup.bool().oneOf(
+              [true],
+              'Spracúvanie osobných údajov je povinné'
+            ),
+          })}
           // onSubmit={e => {
           //   console.log(e)
 
@@ -97,7 +95,7 @@ const ResultPage = () => {
           //   // )
           // }}
         >
-          {({ errors, touched, values }) => (
+          {({ errors, touched, values, dirty }) => (
             <Form>
               <div className="form-group form-check">
                 <Field
@@ -136,6 +134,7 @@ const ResultPage = () => {
                 <ButtonNext
                   text="Odoslať formulár"
                   type="submit"
+                  disabled={!dirty}
                   onClick={handleClick}
                 ></ButtonNext>
               </div>
