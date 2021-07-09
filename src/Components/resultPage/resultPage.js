@@ -1,17 +1,12 @@
 import { connect, useDispatch, useSelector } from 'react-redux'
-import { object } from 'yup'
 import selectors from '../../Redux/seletors/selectors'
-import store from '../../Redux/store'
 import ResultPageStyled from './resultPageStyled'
-import { Formik, Field, Form, ErrorMessage, validateYupSchema } from 'formik'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { ButtonBack, ButtonNext } from '../button/Button'
 import Footer from '../footer/Footer'
 import Background from '../backGround/backGround'
 import { useHistory } from 'react-router-dom'
-import on from '../../assets/img/on.svg'
-import off from '../../assets/img/off.svg'
-import shelterActions from '../../Redux/actions/actions'
 import { postInfoOperation } from '../../Redux/operations/operations'
 
 const ResultPage = () => {
@@ -19,8 +14,6 @@ const ResultPage = () => {
   const lastName = useSelector(selectors.lastName)
   const phone = useSelector(selectors.phone)
   const email = useSelector(selectors.email)
-  console.log(firstName)
-  // const shelterObject = useSelector(state => state.clientReducer)
   const error = 'Pole nebolo vyplnené'
   const amount = useSelector(selectors.amount)
   const selectedShelter = useSelector(selectors.selectedShelter)
@@ -33,18 +26,6 @@ const ResultPage = () => {
   const handleClick = () => {
     dispatch(postInfoOperation(firstName, lastName, phone, amount, email))
   }
-
-  // const resultList = () => {
-  //   for (const item in shelterObject) {
-  //     return <li key={item}>{shelterObject[item]}</li>
-  //     // if (Object.hasOwnProperty.call(shelterObject, key)) {
-  //     //   const element = object[key]
-  //     //   return <li key={element.index}>{element}</li>
-  //     // }
-  //   }
-  // }
-  // console.log(resultList())
-  // console.log(shelterObject)
 
   return (
     <>
@@ -87,13 +68,6 @@ const ResultPage = () => {
               'Spracúvanie osobných údajov je povinné'
             ),
           })}
-          // onSubmit={e => {
-          //   console.log(e)
-
-          //   // dispatch(
-          //   //   postInfoOperation(firstName, lastName, phone, value, email)
-          //   // )
-          // }}
         >
           {({ errors, touched, values, dirty }) => (
             <Form>
@@ -102,7 +76,6 @@ const ResultPage = () => {
                   type="checkbox"
                   name="acceptTerms"
                   acceptTerms={values.acceptTerms}
-                  // value={touched.acceptTerms}
                   className={
                     'form-check-input ' +
                     (errors.acceptTerms && touched.acceptTerms
@@ -113,7 +86,6 @@ const ResultPage = () => {
                 <label
                   htmlFor="acceptTerms"
                   for="acceptTerms"
-                  // className="form-check-label"
                   className={values.acceptTerms ? 'labelOn' : 'labelOff'}
                 >
                   Súhlasím so spracovaním mojich osobných údajov

@@ -1,22 +1,27 @@
 import styled from 'styled-components'
 import on from '../../assets/img/on.svg'
 import off from '../../assets/img/off.svg'
+import thirdpage from '../../assets/img/thirdpage.svg'
 const ResultPageStyled = styled.section`
-  /* padding-bottom: 100px; */
   h3 {
-    /* max-width: 70% */
     font-family: Hind;
     font-style: normal;
     font-weight: bold;
     font-size: 46px;
     line-height: 1.13;
-    /* or 113% */
 
     letter-spacing: 0.01em;
 
     margin-bottom: 42px;
-
-    /* padding-bottom: 70px; */
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 95px;
+      height: 6px;
+      background: url(${thirdpage});
+      top: 25px;
+    }
   }
   h4 {
     font-family: Public Sans;
@@ -63,13 +68,11 @@ const ResultPageStyled = styled.section`
     left: -20px;
     position: absolute;
     display: block;
-    /* top: 80%; */
     content: '';
     width: 40px;
     height: 40px;
     background-image: url(${on});
 
-    /* transform: translate(-5px, -28px); */
     z-index: -10;
   }
   .labelOff::before {
@@ -77,13 +80,11 @@ const ResultPageStyled = styled.section`
     left: -20px;
     position: absolute;
     display: block;
-    /* top: 80%; */
     content: '';
     width: 40px;
     height: 40px;
     background-image: url(${off});
 
-    /* transform: translate(-5px, -28px); */
     z-index: -10;
   }
 
@@ -103,14 +104,24 @@ const ResultPageStyled = styled.section`
 
     transform: translate(43px, 7px);
   }
-  button {
-    width: auto;
+  button:last-child {
+    transform: translate(183%, 0px);
   }
   .buttonContainer {
     margin-top: 75px;
   }
   .form-group {
     position: relative;
+  }
+  @media screen and (min-width: 768px) {
+    button:last-child {
+      transform: translate(110%, 0px);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    button:last-child {
+      transform: translate(50%, 0px);
+    }
   }
 `
 

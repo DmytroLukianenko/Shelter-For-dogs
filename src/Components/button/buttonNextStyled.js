@@ -4,12 +4,9 @@ const buttonNextStyled = styled.button`
   flex-direction: row;
   align-items: flex-start;
   padding: 20px 24px;
-
-  position: absolute;
+  left: 50%;
   transition: all 0.5s ease;
-  width: 124px;
   height: 59px;
-  transform: translateX(340%);
 
   color: white;
   background: linear-gradient(115.41deg, #cd8a64 -1.77%, #c4794f 73.03%);

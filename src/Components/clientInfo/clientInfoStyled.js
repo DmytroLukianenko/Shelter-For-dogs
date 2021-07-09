@@ -1,15 +1,9 @@
 import styled from 'styled-components'
-import dogImg from '../../assets/img/dog-image.png'
-const Wrapper = styled.div`
+import secondpage from '../../assets/img/secondpage.svg'
+
+const Wrapper = styled.section`
   padding-bottom: 169px;
-  .backGround {
-    z-index: -1;
-    width: 492px;
-    height: 567px;
-    position: absolute;
-    left: 55%;
-    background-image: url(${dogImg});
-  }
+
   form {
     width: 550px;
   }
@@ -42,7 +36,6 @@ const Wrapper = styled.div`
     transform: translateY(-12px);
     color: red;
     font-weight: bold;
-    /* background-color: rgb(255, 245, 245); */
 
     display: block;
 
@@ -63,8 +56,6 @@ const Wrapper = styled.div`
   .flag-dropdown {
     border: none;
     background: transparent;
-
-    /* transform: translateY(15%); */
   }
   .react-tel-input .flag-dropdown.open {
     background: transparent;
@@ -85,6 +76,15 @@ const Wrapper = styled.div`
 
     letter-spacing: 0.01em;
     margin-bottom: 42px;
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 95px;
+      height: 6px;
+      background: url(${secondpage});
+      top: 25px;
+    }
   }
   p {
     font-family: Public Sans;
@@ -125,6 +125,19 @@ const Wrapper = styled.div`
       0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
     border-radius: 100px;
     border: none;
+  }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 0;
+    form {
+      width: 100%;
+    }
+    input,
+    .react-tel-input {
+      width: 80%;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
   }
 `
 export default Wrapper

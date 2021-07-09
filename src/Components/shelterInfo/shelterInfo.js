@@ -1,22 +1,16 @@
-import React, { Component, useEffect, useState } from 'react'
-import { Form, Formik, withFormik, Field, ErrorMessage, Button } from 'formik'
+import React, { useEffect } from 'react'
+import { Form, Formik, Field, ErrorMessage } from 'formik'
 import ClientInfoStyled from './shelterInfoStyled'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import allShelters from '../../Redux/operations/operations'
 import selectors from '../../Redux/seletors/selectors'
-import shelterActions, { clientInfoAction } from '../../Redux/actions/actions'
+import shelterActions from '../../Redux/actions/actions'
 import { useHistory } from 'react-router-dom'
 import { ButtonNext } from '../button/Button'
 import Background from '../backGround/backGround'
-import { boolean } from 'yup'
 import Footer from '../footer/Footer'
 import shelterYupSchema from './yupSchema'
-
-// const clientInfo = () => {
-//   return (
-
-//   )
-// }
+import store from '../../Redux/store'
 
 const initialState = {
   oneShelter: '',
@@ -46,11 +40,18 @@ const ShelterInfo = () => {
       <ClientInfoStyled className="container">
         <Background></Background>
         <Formik
-          initialValues={{ ...initialState }}
+          initialValues={{
+            oneShelter: store.oneShelter ? initialState.oneShelter : 'test',
+            selectedShelter: initialState.selectedShelter,
+            shelters: [],
+            amount: initialState.amount,
+            checked: [],
+          }}
           validationSchema={shelterYupSchema}
           onSubmit={values => {
             dispatch(shelterActions.shelterInfoAction(values))
             history.push('/clientInfo')
+            values = { ...store.getState() }
           }}
         >
           {({
@@ -188,7 +189,6 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    // required={values.checked.length > 0 ? false : true}
                   />
                   10 €
                 </label>
@@ -209,7 +209,6 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    // required={values.checked.length > 0 ? false : true}
                   />
                   20 €
                 </label>
@@ -230,7 +229,6 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    // required={values.checked.length > 0 ? false : true}
                   />
                   30 €
                 </label>
@@ -251,7 +249,6 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    // required={values.checked.length > 0 ? false : true}
                   />
                   50 €
                 </label>
@@ -272,7 +269,6 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
-                    // required={values.checked.length > 0 ? false : true}
                   />
                   100 €
                 </label>
@@ -300,11 +296,6 @@ const ShelterInfo = () => {
                 type="submit"
                 text="Pokračovať"
                 disabled={!(isValid && dirty)}
-                // disabled={
-                //   !isValid ||
-                //   (Object.keys(touched).length === 0 &&
-                //     touched.constructor === Object)
-                // }
               ></ButtonNext>
             </Form>
           )}

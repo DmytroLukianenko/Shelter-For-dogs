@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 import pawicon from '../../assets/img/pawicon.svg'
 import walleticon from '../../assets/img/walleticon.svg'
-
+import firstpage from '../../assets/img/firstpage.svg'
 const clientInfoStyled = styled.section`
-  display: flex;
-  padding-bottom: 260px;
   h2 {
     width: 50%;
     font-family: Hind;
@@ -16,6 +14,15 @@ const clientInfoStyled = styled.section`
     letter-spacing: 0.01em;
 
     margin-bottom: 28px;
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 95px;
+      height: 6px;
+      background: url(${firstpage});
+      top: 25px;
+    }
   }
   h3 {
     font-family: Public Sans;
@@ -74,13 +81,16 @@ const clientInfoStyled = styled.section`
     line-height: 1.31;
     border-radius: 24px 0px 0px 24px;
     color: #585757;
-    /* color: white; */
+    transition: all 0.5s ease;
     ::before {
       display: block;
       content: '';
       width: 80px;
       height: 80px;
       background-image: url(${walleticon});
+    }
+    :hover {
+      background: #f0c5ae;
     }
   }
 
@@ -100,6 +110,7 @@ const clientInfoStyled = styled.section`
     font-size: 16px;
     line-height: 1.31;
     border-radius: 0px 24px 24px 0px;
+    transition: all 0.5s ease;
 
     box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
       0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
@@ -115,10 +126,9 @@ const clientInfoStyled = styled.section`
       height: 80px;
       background-image: url(${pawicon});
     }
-  }
-
-  input {
-    /* display: none; */
+    :hover {
+      background: #f0c5ae;
+    }
   }
 
   .active {
@@ -132,15 +142,7 @@ const clientInfoStyled = styled.section`
       0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
       0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
   }
-  .activeLeft {
-    background: linear-gradient(180deg, #cd8b65 0%, #bb6b3d 100%);
-    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
-      0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
-      0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
-      0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
-      0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
-      0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
-  }
+
   .titleContainer {
     display: flex;
     width: 70%;
@@ -173,14 +175,12 @@ const clientInfoStyled = styled.section`
     font-weight: 800;
     font-size: 16px;
     line-height: 1.31;
-    /* identical to box height, or 131% */
 
     color: #2f2f2f;
   }
   .checkboxContainer {
     margin-top: 15px;
     display: flex;
-    /* margin-bottom: 70px; */
   }
   .checkboxLabel {
     display: flex;
@@ -204,6 +204,12 @@ const clientInfoStyled = styled.section`
     font-size: 16px;
     line-height: 1.31;
 
+    transition: all 0.5s ease;
+
+    :hover {
+      background: #f0c5ae;
+    }
+
     /* display: none; */
   }
   .hideCheck {
@@ -225,23 +231,7 @@ const clientInfoStyled = styled.section`
   button {
     margin-top: 70px;
     &:disabled {
-      color: -internal-light-dark(
-        rgba(16, 16, 16, 0.3),
-        rgba(255, 255, 255, 0.3)
-      ) !important;
-      background-color: -internal-light-dark(
-        rgba(239, 239, 239, 0.3),
-        rgba(19, 1, 1, 0.3)
-      ) !important;
-      border-color: -internal-light-dark(
-        rgba(118, 118, 118, 0.3),
-        rgba(195, 195, 195, 0.3)
-      ) !important;
-      /* &:focus {
-      background-color: red;
-      outline: none;
-      box-shadow: 0px 0px 2px red;
-    } */
+      opacity: 0.5;
     }
   }
   option {
@@ -264,13 +254,44 @@ const clientInfoStyled = styled.section`
     transform: translateY(-12px);
     color: red;
     font-weight: bold;
-    /* background-color: rgb(255, 245, 245); */
 
     display: block;
 
     padding: 0.5rem 0.75rem;
     margin-top: 0.5rem;
     white-space: pre-line;
+  }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 100px;
+    form,
+    h2 {
+      width: 100%;
+    }
+    ul {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rightLabel {
+      padding: 45px 25px 23px 25px;
+    }
+    .titleContainer {
+      width: 100%;
+    }
+    select {
+      width: 100%;
+    }
+    label {
+      text-align: center;
+    }
+    button {
+      left: 40%;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .titleContainer {
+      width: 50%;
+    }
   }
 `
 

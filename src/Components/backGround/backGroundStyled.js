@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import dogImg from '../../assets/img/dog-image.png'
 
 const backGroundStyled = styled.div`
+  overflow: hidden;
   background-repeat: no-repeat;
   z-index: -1;
   width: 50%;
@@ -9,5 +10,9 @@ const backGroundStyled = styled.div`
   position: absolute;
   left: 50%;
   background-image: url(${dogImg});
+  @media screen and (max-width: 767px) {
+    left: 30%;
+    width: 70%;
+  }
 `
 export default backGroundStyled

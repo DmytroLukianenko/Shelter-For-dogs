@@ -20,6 +20,7 @@ import phoneInput from '../inputField/inputField'
 import yupSchema from './yupSchema'
 import ResultPage from '../resultPage/resultPage'
 import store from '../../Redux/store'
+import BackGround from '../backGround/backGround'
 
 // import yupSchema from './yupSchema'
 const initialState = {
@@ -39,7 +40,7 @@ function ClientInfoForm() {
   return (
     <>
       <Wrapper className="container">
-        <div className="backGround"></div>
+        <BackGround></BackGround>
         <Formik
           initialValues={{ ...initialState }}
           validationSchema={yupSchema}
@@ -47,14 +48,7 @@ function ClientInfoForm() {
             dispatch(clientInfoAction(values), history.push('/result'))
           }
         >
-          {({
-            values,
-            handleChange,
-            setFieldValue,
-            formik,
-            disabled,
-            dirty,
-          }) => (
+          {({ values, handleChange, setFieldValue, dirty, isValid }) => (
             <Form>
               <h2>Potrebujeme od Vás zopár informácií</h2>
               <p>O vás</p>
@@ -77,7 +71,6 @@ function ClientInfoForm() {
                 type="text"
                 placeholder="Zadajte Vaše priezvisko"
                 value={values.lastName}
-                // onChange={onChange}
                 onChange={handleChange}
               />
               <div className="error">
@@ -90,7 +83,6 @@ function ClientInfoForm() {
                 type="email"
                 placeholder="Zadajte Váš e-mail"
                 value={values.email}
-                // onChange={onChange}
                 onChange={handleChange}
               />
               <div className="error">
@@ -117,7 +109,6 @@ function ClientInfoForm() {
                 }}
                 required
               />
-              {/* <button test></button> */}
               <div className="buttonContainer">
                 <ButtonBack
                   text="Späť"
@@ -130,7 +121,7 @@ function ClientInfoForm() {
                   text="Pokračovať"
                   type="submit"
                   alt="button next"
-                  disabled={values.isValid && values.dirty}
+                  disabled={!(isValid && dirty)}
                   onChange={handleChange}
                 ></ButtonNext>
               </div>

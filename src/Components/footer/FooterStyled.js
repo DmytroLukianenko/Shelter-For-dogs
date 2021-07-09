@@ -5,7 +5,6 @@ const FooterStyled = styled.footer`
   padding-top: 5%;
   justify-content: space-between;
   height: auto;
-  /* margin-top: 169px; */
 
   &:before {
     position: absolute;
@@ -41,6 +40,31 @@ const FooterStyled = styled.footer`
   }
   .linkList {
     line-height: 2;
+  }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    display: block;
+    margin-top: 100px;
+    img,
+    p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &:before {
+      width: 60%;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+    padding-bottom: 100px;
+    &:before {
+      width: 90%;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    &:before {
+      width: 80%;
+    }
   }
 `
 export default FooterStyled

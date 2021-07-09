@@ -1,6 +1,5 @@
 import ButtonBackStyled from './buttonBackStyled'
 import ButtonNextStyled from './buttonNextStyled'
-import { useHistory } from 'react-router-dom'
 
 export const ButtonNext = ({ text, type, ...props }) => {
   return (

@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import dogImg from '../img/dog-image.png'
 const GlobalStyle = createGlobalStyle`
 
 
@@ -24,7 +23,6 @@ body {
     margin-left: auto;
     font-family: 'Hind Siliguri', sans-serif;
 font-family: 'Public Sans', sans-serif;
-    /* overflow: hidden; */
 }
 
 img {
