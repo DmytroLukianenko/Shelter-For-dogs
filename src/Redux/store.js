@@ -8,7 +8,6 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist'
-import persistReducer from 'redux-persist/es/persistReducer'
 import rootReducer from './reducers/reducers'
 
 const store = configureStore({
