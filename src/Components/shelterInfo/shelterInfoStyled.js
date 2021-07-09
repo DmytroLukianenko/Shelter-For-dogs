@@ -250,6 +250,19 @@ const clientInfoStyled = styled.section`
     background: linear-gradient(115.41deg, #cd8a64 -1.77%, #c4794f 73.03%);
     border-radius: 8px;
   }
+
+  .error {
+    transform: translateY(-12px);
+    color: red;
+    font-weight: bold;
+    /* background-color: rgb(255, 245, 245); */
+
+    display: block;
+
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    white-space: pre-line;
+  }
 `
 
 export default clientInfoStyled

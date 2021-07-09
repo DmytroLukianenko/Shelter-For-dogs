@@ -42,12 +42,19 @@ function ClientInfoForm() {
         <div className="backGround"></div>
         <Formik
           initialValues={{ ...initialState }}
-          // validationSchema={yupSchema}
+          validationSchema={yupSchema}
           onSubmit={values =>
             dispatch(clientInfoAction(values), history.push('/result'))
           }
         >
-          {({ values, handleChange, setFieldValue }) => (
+          {({
+            values,
+            handleChange,
+            setFieldValue,
+            formik,
+            disabled,
+            dirty,
+          }) => (
             <Form>
               <h2>Potrebujeme od Vás zopár informácií</h2>
               <p>O vás</p>
@@ -60,7 +67,9 @@ function ClientInfoForm() {
                 value={values.firstName}
                 onChange={handleChange}
               />
-              <ErrorMessage name="firstName" />
+              <div className="error">
+                <ErrorMessage name="firstName" />
+              </div>
 
               <label htmlFor="lastName">Priezvisko</label>
               <Field
@@ -71,7 +80,9 @@ function ClientInfoForm() {
                 // onChange={onChange}
                 onChange={handleChange}
               />
-              <ErrorMessage name="lastName" />
+              <div className="error">
+                <ErrorMessage name="lastName" />
+              </div>
 
               <label htmlFor="email">E-mailová adresa</label>
               <Field
@@ -82,7 +93,10 @@ function ClientInfoForm() {
                 // onChange={onChange}
                 onChange={handleChange}
               />
-              <ErrorMessage name="email" />
+              <div className="error">
+                {' '}
+                <ErrorMessage name="email" />
+              </div>
               <label for="phone">Telefónne číslo</label>
               <ReactPhoneInput
                 country={'sk'}
@@ -103,6 +117,7 @@ function ClientInfoForm() {
                 }}
                 required
               />
+              {/* <button test></button> */}
               <div className="buttonContainer">
                 <ButtonBack
                   text="Späť"
@@ -114,6 +129,8 @@ function ClientInfoForm() {
                   text="Pokračovať"
                   type="submit"
                   alt="button next"
+                  disabled={!(values.isValid && values.dirty)}
+                  onChange={handleChange}
                 ></ButtonNext>
               </div>
             </Form>

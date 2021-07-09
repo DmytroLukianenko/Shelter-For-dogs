@@ -2,16 +2,7 @@ import { createReducer } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
 import { clientInfoAction } from '../actions/actions'
 import shelterActions from '../actions/actions'
-import { number } from 'yup'
 
-const clientInfoinitialState = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-}
-
-// const clientReducer = createReducer({ ...clientInfoinitialState })
 const shelterInfoInitialState = {
   oneShelter: '',
   selectedShelter: '',

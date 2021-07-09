@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     font-weight: 800;
     font-size: 16px;
     line-height: 21px;
-    z-index: 1;
+    z-index: 10;
   }
   input {
     width: 100%;
@@ -37,6 +37,18 @@ const Wrapper = styled.div`
     margin-bottom: 16px;
 
     padding: 37px 24px 16px 24px;
+  }
+  .error {
+    transform: translateY(-12px);
+    color: red;
+    font-weight: bold;
+    /* background-color: rgb(255, 245, 245); */
+
+    display: block;
+
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    white-space: pre-line;
   }
   .react-tel-input {
     border: 1px solid #cd8b65;
@@ -53,6 +65,9 @@ const Wrapper = styled.div`
     background: transparent;
 
     /* transform: translateY(15%); */
+  }
+  .react-tel-input .flag-dropdown.open {
+    background: transparent;
   }
   .selected-flag {
     transform: translateY(10%);

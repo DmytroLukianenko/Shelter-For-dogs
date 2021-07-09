@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import { Form, Formik, withFormik, Field } from 'formik'
+import { Form, Formik, withFormik, Field, ErrorMessage } from 'formik'
 import ClientInfoStyled from './shelterInfoStyled'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import allShelters from '../../Redux/operations/operations'
@@ -10,6 +10,7 @@ import { ButtonNext } from '../button/Button'
 import Background from '../backGround/backGround'
 import { boolean } from 'yup'
 import Footer from '../footer/Footer'
+import shelterYupSchema from './yupSchema'
 
 // const clientInfo = () => {
 //   return (
@@ -26,17 +27,9 @@ const initialState = {
 }
 
 const ShelterInfo = () => {
-  const [state, newState] = useState({ ...initialState })
   const dispatch = useDispatch('')
   const history = useHistory()
   const selectorList = useSelector(selectors.allShelters)
-  // console.log(value)
-  function myFunc(e) {
-    // if (e.target.id === 'radioOne') {
-    //   e.target.labels[0].className = 'leftLabel active'
-    // } else {
-    // }
-  }
 
   useEffect(() => {
     dispatch(allShelters)
@@ -48,35 +41,26 @@ const ShelterInfo = () => {
     )
   })
 
-  const onChangeRadioButton = e => {
-    newState({ ...state, oneShelter: e.target.value })
-  }
-
   return (
     <>
       <ClientInfoStyled className="container">
         <Background></Background>
         <Formik
           initialValues={{ ...initialState }}
-          // console.log(value)
+          validationSchema={shelterYupSchema}
           onSubmit={values => {
-            // const needShelter = values.shelters.find(values.oneShelter)
-            // console.log(values.shelters)
             dispatch(shelterActions.shelterInfoAction(values))
             history.push('/clientInfo')
           }}
         >
           {({
             value,
-            style,
             values,
             handleChange,
             handleBlur,
             errors,
             touched,
             setFieldValue,
-            className,
-            testim,
           }) => (
             <Form>
               <h2>Vyberte si možnosť, ako chcete pomôcť </h2>
@@ -103,6 +87,7 @@ const ShelterInfo = () => {
                         name="oneShelter"
                         value="one"
                         defaultChecked={values.oneShelter === value}
+                        required={touched ? true : false}
                       />
                     </label>
                   </li>
@@ -123,22 +108,27 @@ const ShelterInfo = () => {
                         name="oneShelter"
                         value="all"
                         defaultChecked={values.oneShelter === value}
+                        required={touched ? true : false}
                       />
                     </label>
                   </li>
                 </ul>
+                <div className="error">
+                  {errors.myRadioGroup ? errors.myRadioGroup : null}
+                  <ErrorMessage name="myRadioGroup" />
+                </div>
               </Field>
               <div className="titleContainer">
                 <h3>O projekte</h3>
-                <h4>Nepovinné</h4>
+                <h3>Nepovinné</h3>
               </div>
               <label className="selectLabel">Utulok</label>
               <select
                 name="selectedShelter"
                 value={values.selectedShelter}
                 onChange={handleChange}
-                // onChange={ata}
                 onBlur={handleBlur}
+                disabled={values.oneShelter === 'one' ? false : true}
               >
                 <option
                   className="selectPlaceholder"
@@ -147,10 +137,9 @@ const ShelterInfo = () => {
                 />
                 {selectList}
               </select>
-              {/* <p>Utulok</p> */}
-              {errors.color && touched.color && (
-                <div className="input-feedback">{errors.color}</div>
-              )}
+              <div className="error">
+                <ErrorMessage name="selectLabel" />
+              </div>
               <h3>Suma, ktorou chcem prispieť</h3>
               <div
                 className="checkboxContainer"
@@ -175,6 +164,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
+                    required={values.checked.length > 0 ? false : true}
                   />
                   5 €
                 </label>
@@ -195,6 +185,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
+                    required={values.checked.length > 0 ? false : true}
                   />
                   10 €
                 </label>
@@ -215,6 +206,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
+                    required={values.checked.length > 0 ? false : true}
                   />
                   20 €
                 </label>
@@ -235,6 +227,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
+                    required={values.checked.length > 0 ? false : true}
                   />
                   30 €
                 </label>
@@ -255,6 +248,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
+                    required={values.checked.length > 0 ? false : true}
                   />
                   50 €
                 </label>
@@ -275,6 +269,7 @@ const ShelterInfo = () => {
                         setFieldValue('checked', [value.target.value])
                       }
                     }}
+                    required={values.checked.length > 0 ? false : true}
                   />
                   100 €
                 </label>
@@ -294,7 +289,10 @@ const ShelterInfo = () => {
                   }}
                 ></Field>
               </div>
-              {/* <button type="submit">Pokračovať </button> */}
+              <div className="error">
+                {errors.checked ? errors.checked : null}
+                <ErrorMessage name="checked" />
+              </div>
               <ButtonNext type="submit" text="Pokračovať">
                 {' '}
               </ButtonNext>
