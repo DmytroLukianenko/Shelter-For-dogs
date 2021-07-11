@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/Shelter-For-dogs/static/js/main.6c28b0df.chunk.js",
-    "main.js.map": "/Shelter-For-dogs/static/js/main.6c28b0df.chunk.js.map",
+    "main.js": "/Shelter-For-dogs/static/js/main.bbad8c61.chunk.js",
+    "main.js.map": "/Shelter-For-dogs/static/js/main.bbad8c61.chunk.js.map",
     "runtime-main.js": "/Shelter-For-dogs/static/js/runtime-main.abe49a1e.js",
     "runtime-main.js.map": "/Shelter-For-dogs/static/js/runtime-main.abe49a1e.js.map",
     "static/css/2.a082927c.chunk.css": "/Shelter-For-dogs/static/css/2.a082927c.chunk.css",
-    "static/js/2.39c31954.chunk.js": "/Shelter-For-dogs/static/js/2.39c31954.chunk.js",
-    "static/js/2.39c31954.chunk.js.map": "/Shelter-For-dogs/static/js/2.39c31954.chunk.js.map",
+    "static/js/2.b7053b01.chunk.js": "/Shelter-For-dogs/static/js/2.b7053b01.chunk.js",
+    "static/js/2.b7053b01.chunk.js.map": "/Shelter-For-dogs/static/js/2.b7053b01.chunk.js.map",
     "index.html": "/Shelter-For-dogs/index.html",
     "static/css/2.a082927c.chunk.css.map": "/Shelter-For-dogs/static/css/2.a082927c.chunk.css.map",
-    "static/js/2.39c31954.chunk.js.LICENSE.txt": "/Shelter-For-dogs/static/js/2.39c31954.chunk.js.LICENSE.txt",
+    "static/js/2.b7053b01.chunk.js.LICENSE.txt": "/Shelter-For-dogs/static/js/2.b7053b01.chunk.js.LICENSE.txt",
     "static/media/dog-image.d9eca80d.png": "/Shelter-For-dogs/static/media/dog-image.d9eca80d.png",
     "static/media/firstpage.09b20b8e.svg": "/Shelter-For-dogs/static/media/firstpage.09b20b8e.svg",
     "static/media/logo.d4372a00.svg": "/Shelter-For-dogs/static/media/logo.d4372a00.svg",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.abe49a1e.js",
     "static/css/2.a082927c.chunk.css",
-    "static/js/2.39c31954.chunk.js",
-    "static/js/main.6c28b0df.chunk.js"
+    "static/js/2.b7053b01.chunk.js",
+    "static/js/main.bbad8c61.chunk.js"
   ]
 }

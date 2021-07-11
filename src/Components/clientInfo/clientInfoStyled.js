@@ -43,6 +43,7 @@ const Wrapper = styled.section`
     margin-top: 0.5rem;
     white-space: pre-line;
   }
+  /* =======================================phone input =================== */
   .react-tel-input {
     border: 1px solid #cd8b65;
     box-sizing: border-box;
@@ -67,6 +68,7 @@ const Wrapper = styled.section`
   .form-control {
     transform: translateY(-15%);
   }
+  /* ============================= -======================= */
   h2 {
     font-family: Hind;
     font-style: normal;

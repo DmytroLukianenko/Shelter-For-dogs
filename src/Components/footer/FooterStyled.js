@@ -51,7 +51,7 @@ const FooterStyled = styled.footer`
       margin-right: auto;
     }
     &:before {
-      width: 60%;
+      width: 90%;
     }
   }
   @media screen and (min-width: 768px) {
