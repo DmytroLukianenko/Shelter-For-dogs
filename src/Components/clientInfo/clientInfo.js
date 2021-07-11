@@ -1,13 +1,5 @@
-import React, { Component, useState } from 'react'
-import {
-  Formik,
-  Field,
-  Form,
-  ErrorMessage,
-  validateYupSchema,
-  useFormik,
-  setFieldValue,
-} from 'formik'
+import React, { useState } from 'react'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
 import { connect, useDispatch } from 'react-redux'
 import ReactPhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
@@ -16,10 +8,7 @@ import { clientInfoAction } from '../../Redux/actions/actions'
 import { ButtonBack, ButtonNext } from '../button/Button'
 import Footer from '../footer/Footer'
 import { useHistory } from 'react-router-dom'
-import phoneInput from '../inputField/inputField'
 import yupSchema from './yupSchema'
-import ResultPage from '../resultPage/resultPage'
-import store from '../../Redux/store'
 import BackGround from '../backGround/backGround'
 
 // import yupSchema from './yupSchema'
@@ -31,7 +20,6 @@ const initialState = {
 }
 
 function ClientInfoForm() {
-  const [state, newState] = useState({ ...initialState })
   const dispatch = useDispatch()
   const history = useHistory()
 
@@ -48,7 +36,15 @@ function ClientInfoForm() {
             dispatch(clientInfoAction(values), history.push('/result'))
           }
         >
-          {({ values, handleChange, setFieldValue, dirty, isValid }) => (
+          {({
+            values,
+            value,
+            handleChange,
+            setFieldValue,
+            dirty,
+            isValid,
+            errors,
+          }) => (
             <Form>
               <h2>Potrebujeme od Vás zopár informácií</h2>
               <p>O vás</p>
@@ -117,6 +113,7 @@ function ClientInfoForm() {
                   alt="button back"
                 ></ButtonBack>
                 <ButtonNext
+                  name="button"
                   className="button"
                   text="Pokračovať"
                   type="submit"
@@ -124,6 +121,9 @@ function ClientInfoForm() {
                   disabled={!(isValid && dirty)}
                   onChange={handleChange}
                 ></ButtonNext>
+                <ErrorMessage
+                  render={msg => <div>{msg.name}</div>}
+                ></ErrorMessage>
               </div>
             </Form>
           )}
