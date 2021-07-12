@@ -8,6 +8,7 @@ import Footer from '../footer/Footer'
 import Background from '../backGround/backGround'
 import { useHistory } from 'react-router-dom'
 import { postInfoOperation } from '../../Redux/operations/operations'
+// import { boolean } from 'yup/lib/locale'
 
 const ResultPage = () => {
   const firstName = useSelector(selectors.firstName)
@@ -60,38 +61,37 @@ const ResultPage = () => {
         </ul>
         <Formik
           initialValues={{
-            acceptTerms: false,
+            acceptterms: 'false',
           }}
           validationSchema={Yup.object().shape({
-            acceptTerms: Yup.bool().oneOf(
-              [true],
+            acceptterms: Yup.string().oneOf(
+              ['true'],
               'Spracúvanie osobných údajov je povinné'
             ),
           })}
         >
-          {({ errors, touched, values, dirty }) => (
+          {({ errors, touched, values, dirty, isValid }) => (
             <Form>
               <div className="form-group form-check">
                 <Field
                   type="checkbox"
-                  name="acceptTerms"
-                  acceptTerms={values.acceptTerms}
+                  name="acceptterms"
+                  acceptterms={values.acceptterms.toString()}
                   className={
                     'form-check-input ' +
-                    (errors.acceptTerms && touched.acceptTerms
+                    (errors.acceptterms && isValid.acceptterms
                       ? ' is-invalid'
                       : '')
                   }
                 />
                 <label
-                  htmlFor="acceptTerms"
-                  for="acceptTerms"
-                  className={values.acceptTerms ? 'labelOn' : 'labelOff'}
+                  htmlFor="acceptterms"
+                  className={!values.acceptterms ? 'labelOn' : 'labelOff'}
                 >
                   Súhlasím so spracovaním mojich osobných údajov
                 </label>
                 <ErrorMessage
-                  name="acceptTerms"
+                  name="acceptterms"
                   component="div"
                   className="invalid-feedback"
                 />
@@ -106,7 +106,7 @@ const ResultPage = () => {
                 <ButtonNext
                   text="Odoslať formulár"
                   type="submit"
-                  disabled={!dirty}
+                  disabled={isValid}
                   onClick={handleClick}
                 ></ButtonNext>
               </div>

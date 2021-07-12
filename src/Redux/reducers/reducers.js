@@ -12,7 +12,6 @@ const shelterInfoInitialState = {
   lastName: '',
   email: '',
   phone: '',
-  checked: [],
 }
 
 const shelterInfoReducer = createReducer(

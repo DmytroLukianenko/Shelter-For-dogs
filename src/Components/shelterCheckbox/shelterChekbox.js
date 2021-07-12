@@ -25,7 +25,6 @@ const shelterCheckbox = props => {
             name="checked"
             value="5"
             onChange={value => {
-              console.log(value.target.checked)
               if (values.checked.length >= 0) {
                 setFieldValue('checked', [value.target.value])
               }

@@ -28,6 +28,7 @@ const ShelterInfo = () => {
 
   useEffect(() => {
     dispatch(allShelters())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
