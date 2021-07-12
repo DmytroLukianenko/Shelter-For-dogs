@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.js": "/Shelter-For-dogs/static/js/main.bbad8c61.chunk.js",
-    "main.js.map": "/Shelter-For-dogs/static/js/main.bbad8c61.chunk.js.map",
-    "runtime-main.js": "/Shelter-For-dogs/static/js/runtime-main.abe49a1e.js",
-    "runtime-main.js.map": "/Shelter-For-dogs/static/js/runtime-main.abe49a1e.js.map",
-    "static/css/2.a082927c.chunk.css": "/Shelter-For-dogs/static/css/2.a082927c.chunk.css",
-    "static/js/2.b7053b01.chunk.js": "/Shelter-For-dogs/static/js/2.b7053b01.chunk.js",
-    "static/js/2.b7053b01.chunk.js.map": "/Shelter-For-dogs/static/js/2.b7053b01.chunk.js.map",
-    "index.html": "/Shelter-For-dogs/index.html",
-    "static/css/2.a082927c.chunk.css.map": "/Shelter-For-dogs/static/css/2.a082927c.chunk.css.map",
-    "static/js/2.b7053b01.chunk.js.LICENSE.txt": "/Shelter-For-dogs/static/js/2.b7053b01.chunk.js.LICENSE.txt",
-    "static/media/dog-image.d9eca80d.png": "/Shelter-For-dogs/static/media/dog-image.d9eca80d.png",
-    "static/media/firstpage.09b20b8e.svg": "/Shelter-For-dogs/static/media/firstpage.09b20b8e.svg",
-    "static/media/logo.d4372a00.svg": "/Shelter-For-dogs/static/media/logo.d4372a00.svg",
-    "static/media/off.58891098.svg": "/Shelter-For-dogs/static/media/off.58891098.svg",
-    "static/media/on.597eae8c.svg": "/Shelter-For-dogs/static/media/on.597eae8c.svg",
-    "static/media/pawicon.1ebe5d47.svg": "/Shelter-For-dogs/static/media/pawicon.1ebe5d47.svg",
-    "static/media/secondpage.e2bcc6a1.svg": "/Shelter-For-dogs/static/media/secondpage.e2bcc6a1.svg",
-    "static/media/separator.d5b0c6fe.svg": "/Shelter-For-dogs/static/media/separator.d5b0c6fe.svg",
-    "static/media/thirdpage.43db88c7.svg": "/Shelter-For-dogs/static/media/thirdpage.43db88c7.svg",
-    "static/media/walleticon.56f73f81.svg": "/Shelter-For-dogs/static/media/walleticon.56f73f81.svg"
+    "main.js": "/static/js/main.b7a9484a.chunk.js",
+    "main.js.map": "/static/js/main.b7a9484a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a2b411f7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a2b411f7.js.map",
+    "static/css/2.a082927c.chunk.css": "/static/css/2.a082927c.chunk.css",
+    "static/js/2.19a6ac3c.chunk.js": "/static/js/2.19a6ac3c.chunk.js",
+    "static/js/2.19a6ac3c.chunk.js.map": "/static/js/2.19a6ac3c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.a082927c.chunk.css.map": "/static/css/2.a082927c.chunk.css.map",
+    "static/js/2.19a6ac3c.chunk.js.LICENSE.txt": "/static/js/2.19a6ac3c.chunk.js.LICENSE.txt",
+    "static/media/dog-image.d9eca80d.png": "/static/media/dog-image.d9eca80d.png",
+    "static/media/firstpage.7c1bb6d5.svg": "/static/media/firstpage.7c1bb6d5.svg",
+    "static/media/logo.bc9024e4.svg": "/static/media/logo.bc9024e4.svg",
+    "static/media/off.6626fcd6.svg": "/static/media/off.6626fcd6.svg",
+    "static/media/on.265def62.svg": "/static/media/on.265def62.svg",
+    "static/media/pawicon.84729ab0.svg": "/static/media/pawicon.84729ab0.svg",
+    "static/media/secondpage.4bfdc57c.svg": "/static/media/secondpage.4bfdc57c.svg",
+    "static/media/separator.b996389c.svg": "/static/media/separator.b996389c.svg",
+    "static/media/thirdpage.8c3df7e8.svg": "/static/media/thirdpage.8c3df7e8.svg",
+    "static/media/walleticon.9601ef91.svg": "/static/media/walleticon.9601ef91.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.abe49a1e.js",
+    "static/js/runtime-main.a2b411f7.js",
     "static/css/2.a082927c.chunk.css",
-    "static/js/2.b7053b01.chunk.js",
-    "static/js/main.bbad8c61.chunk.js"
+    "static/js/2.19a6ac3c.chunk.js",
+    "static/js/main.b7a9484a.chunk.js"
   ]
 }
