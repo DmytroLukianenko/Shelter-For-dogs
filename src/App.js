@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Router>
+      <Router basename="/Shelter-For-dogs">
         <Switch>
           <Route exact path="/" component={ShelterInfo} />
           <Route path="/clientInfo" component={clientInfo} />
