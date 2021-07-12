@@ -4,7 +4,6 @@ const shelterCheckboxStyled = styled.div`
   label,
   input {
     text-align: center;
-    /* margin-top: 10px; */
     &:before {
       margin-left: auto;
       margin-right: auto;

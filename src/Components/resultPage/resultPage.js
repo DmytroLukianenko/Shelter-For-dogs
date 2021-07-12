@@ -70,7 +70,7 @@ const ResultPage = () => {
             ),
           })}
         >
-          {({ errors, touched, values, dirty, isValid }) => (
+          {({ errors, values, isValid }) => (
             <Form>
               <div className="form-group form-check">
                 <Field
@@ -86,7 +86,7 @@ const ResultPage = () => {
                 />
                 <label
                   htmlFor="acceptterms"
-                  className={!values.acceptterms ? 'labelOn' : 'labelOff'}
+                  className={values.acceptterms ? 'labelOn' : 'labelOff'}
                 >
                   Súhlasím so spracovaním mojich osobných údajov
                 </label>
