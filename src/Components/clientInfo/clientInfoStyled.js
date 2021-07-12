@@ -139,7 +139,12 @@ const Wrapper = styled.section`
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
+    form,
+    input,
+    .react-tel-input {
+      width: 70%;
+    }
   }
 `
 export default Wrapper

@@ -61,7 +61,7 @@ const ResultPage = () => {
         </ul>
         <Formik
           initialValues={{
-            acceptterms: 'false',
+            acceptterms: false,
           }}
           validationSchema={Yup.object().shape({
             acceptterms: Yup.string().oneOf(
@@ -70,7 +70,7 @@ const ResultPage = () => {
             ),
           })}
         >
-          {({ errors, values, isValid }) => (
+          {({ errors, values, isValid, dirty }) => (
             <Form>
               <div className="form-group form-check">
                 <Field
@@ -106,7 +106,7 @@ const ResultPage = () => {
                 <ButtonNext
                   text="Odoslať formulár"
                   type="submit"
-                  disabled={isValid}
+                  disabled={!values.acceptterms}
                   onClick={handleClick}
                 ></ButtonNext>
               </div>

@@ -61,6 +61,14 @@ img {
         padding-bottom: 78px;
     }
 }
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 100%;
+        padding-left: 250px;
+        padding-right: 250px;
+        padding-bottom: 78px;
+    }
+}
 
 .link {
   text-decoration: none;

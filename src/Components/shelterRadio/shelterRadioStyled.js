@@ -109,5 +109,10 @@ const shelterRadioStyled = styled.div`
       }
     }
   }
+  @media screen and (min-width: 1440px) {
+    ul {
+      width: 70%;
+    }
+  }
 `
 export default shelterRadioStyled

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Form, Formik, Field, ErrorMessage } from 'formik'
-import ClientInfoStyled from './shelterInfoStyled'
+import ShelterIngoStyled from './shelterInfoStyled'
 import { connect, useDispatch } from 'react-redux'
 import allShelters from '../../Redux/operations/operations'
 import shelterActions from '../../Redux/actions/actions'
@@ -33,7 +33,7 @@ const ShelterInfo = () => {
 
   return (
     <>
-      <ClientInfoStyled className="container">
+      <ShelterIngoStyled className="container">
         <Background></Background>
         <Formik
           initialValues={{ ...initialState }}
@@ -91,7 +91,7 @@ const ShelterInfo = () => {
             </Form>
           )}
         </Formik>
-      </ClientInfoStyled>
+      </ShelterIngoStyled>
       <Footer />
     </>
   )

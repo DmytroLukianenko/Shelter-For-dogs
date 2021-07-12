@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import on from '../../assets/img/on.svg'
 import off from '../../assets/img/off.svg'
 import thirdpage from '../../assets/img/thirdpage.svg'
+
 const ResultPageStyled = styled.section`
   h3 {
     font-family: Hind;

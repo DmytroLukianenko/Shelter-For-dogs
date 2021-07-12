@@ -40,6 +40,11 @@ const shelterSelectStyled = styled.div`
       box-shadow: 0px 0px 2px red;
     }
   }
+  @media screen and (min-width: 1440px) {
+    select {
+      width: 70%;
+    }
+  }
 `
 
 export default shelterSelectStyled

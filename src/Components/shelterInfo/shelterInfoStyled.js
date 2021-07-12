@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import firstpage from '../../assets/img/firstpage.svg'
-const clientInfoStyled = styled.section`
+const shelterIngoStyled = styled.section`
   h2 {
     width: 50%;
     font-family: Hind;
@@ -90,6 +90,14 @@ const clientInfoStyled = styled.section`
       width: 557px;
     }
   }
+  @media screen and (min-width: 1440px) {
+    /* ul {
+      max-width: 70%;
+    } */
+    .titleContainer {
+      width: 70%;
+    }
+  }
 `
 
-export default clientInfoStyled
+export default shelterIngoStyled

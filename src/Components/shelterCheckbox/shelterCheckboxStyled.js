@@ -82,6 +82,12 @@ const shelterCheckboxStyled = styled.div`
       }
     }
   }
+  @media screen and (min-width: 1440px) {
+    width: 70%;
+    .checkboxContainer {
+      justify-content: space-evenly;
+    }
+  }
 `
 
 export default shelterCheckboxStyled

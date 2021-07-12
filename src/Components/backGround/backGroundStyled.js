@@ -5,14 +5,16 @@ const backGroundStyled = styled.div`
   overflow: hidden;
   background-repeat: no-repeat;
   z-index: -1;
-  width: 50%;
+  width: 492px;
   height: 100%;
   position: absolute;
   left: 50%;
   background-image: url(${dogImg});
   @media screen and (max-width: 767px) {
     left: 30%;
-    width: 70%;
+  }
+  @media screen and (min-width: 1440px) {
+    left: 60%;
   }
 `
 export default backGroundStyled
