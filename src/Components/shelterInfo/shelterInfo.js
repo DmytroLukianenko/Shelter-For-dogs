@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { Form, Formik, Field, ErrorMessage } from 'formik'
 import ClientInfoStyled from './shelterInfoStyled'
-import { connect, useDispatch, useSelector } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import allShelters from '../../Redux/operations/operations'
-import selectors from '../../Redux/seletors/selectors'
 import shelterActions from '../../Redux/actions/actions'
 import { useHistory } from 'react-router-dom'
 import { ButtonNext } from '../button/Button'
@@ -26,10 +25,9 @@ const initialState = {
 const ShelterInfo = () => {
   const dispatch = useDispatch('')
   const history = useHistory()
-  const selectorList = useSelector(selectors.allShelters)
 
   useEffect(() => {
-    dispatch(allShelters)
+    dispatch(allShelters())
   }, [])
 
   return (
@@ -49,7 +47,6 @@ const ShelterInfo = () => {
             values,
             handleChange,
             handleBlur,
-            errors,
             touched,
             setFieldValue,
             isValid,

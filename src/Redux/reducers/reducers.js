@@ -6,13 +6,13 @@ import shelterActions from '../actions/actions'
 const shelterInfoInitialState = {
   oneShelter: '',
   selectedShelter: '',
-  shelterId: '',
   shelters: [],
   amount: '',
   firstName: '',
   lastName: '',
   email: '',
   phone: '',
+  checked: [],
 }
 
 const shelterInfoReducer = createReducer(

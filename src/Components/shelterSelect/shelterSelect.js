@@ -3,7 +3,7 @@ import ShelterSelectStyled from './shelterSelectStyled'
 import { useSelector } from 'react-redux'
 
 const SheltroSelect = props => {
-  const { values, onChange, disabled, onBlur, ...restProps } = props
+  const { values, onChange, onBlur } = props
 
   const selectorList = useSelector(selectors.allShelters)
 

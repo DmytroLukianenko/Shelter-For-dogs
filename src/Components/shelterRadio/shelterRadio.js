@@ -2,7 +2,7 @@ import { Field, ErrorMessage } from 'formik'
 import ShelterRadioStyled from './shelterRadioStyled'
 
 const shelterRadioGroup = props => {
-  const { touched, values, value, handleChange, ...restProps } = props
+  const { touched, values, value, handleChange } = props
   return (
     <ShelterRadioStyled>
       <Field component="div" name="myRadioGroup" onChange={handleChange}>

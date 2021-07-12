@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import { connect, useDispatch } from 'react-redux'
 import ReactPhoneInput from 'react-phone-input-2'
@@ -11,7 +11,6 @@ import { useHistory } from 'react-router-dom'
 import yupSchema from './yupSchema'
 import BackGround from '../backGround/backGround'
 
-// import yupSchema from './yupSchema'
 const initialState = {
   firstName: '',
   lastName: '',
@@ -36,15 +35,7 @@ function ClientInfoForm() {
             dispatch(clientInfoAction(values), history.push('/result'))
           }
         >
-          {({
-            values,
-            value,
-            handleChange,
-            setFieldValue,
-            dirty,
-            isValid,
-            errors,
-          }) => (
+          {({ values, handleChange, setFieldValue, dirty, isValid }) => (
             <Form>
               <h2>Potrebujeme od Vás zopár informácií</h2>
               <p>O vás</p>
@@ -85,7 +76,7 @@ function ClientInfoForm() {
                 {' '}
                 <ErrorMessage name="email" />
               </div>
-              <label for="phone">Telefónne číslo</label>
+              <label htmlFor="phone">Telefónne číslo</label>
               <ReactPhoneInput
                 country={'sk'}
                 onlyCountries={['cz', 'sk']}
