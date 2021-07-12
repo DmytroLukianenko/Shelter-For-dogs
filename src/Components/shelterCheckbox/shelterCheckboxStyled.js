@@ -87,6 +87,10 @@ const shelterCheckboxStyled = styled.div`
     .checkboxContainer {
       justify-content: space-evenly;
     }
+    label {
+      width: 13%;
+      justify-content: center;
+    }
   }
 `
 
