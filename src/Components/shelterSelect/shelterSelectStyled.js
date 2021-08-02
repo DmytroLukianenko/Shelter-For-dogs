@@ -42,7 +42,7 @@ const shelterSelectStyled = styled.div`
   }
   @media screen and (min-width: 1440px) {
     select {
-      width: 70%;
+      width: 100%;
     }
   }
 `

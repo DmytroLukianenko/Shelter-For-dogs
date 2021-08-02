@@ -91,11 +91,16 @@ const shelterIngoStyled = styled.section`
     }
   }
   @media screen and (min-width: 1440px) {
-    /* ul {
-      max-width: 70%;
-    } */
     .titleContainer {
+      width: 100%;
+    }
+    form {
       width: 70%;
+    }
+    margin: 0;
+
+    div {
+      width: 100%;
     }
   }
 `

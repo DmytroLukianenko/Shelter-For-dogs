@@ -13,7 +13,7 @@ const shelterRadioStyled = styled.div`
   }
   li {
     display: inline-block;
-    width: 50%;
+    width: 49%;
     height: 100%;
   }
   .leftLabel {
@@ -111,7 +111,7 @@ const shelterRadioStyled = styled.div`
   }
   @media screen and (min-width: 1440px) {
     ul {
-      width: 70%;
+      width: 100%;
     }
   }
 `
